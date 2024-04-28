@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "doaddoncompat",
+  "version": "${version}",
+  "name": "[Let's Do Addon] Compat",
+  "description": "This is an example description! Tell everyone what your mod is about!",
+  "authors": [
+    "Ninjdai"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/FabricMC/fabric-example-mod"
+  },
+  "license": "CC0-1.0",
+  "icon": "assets/doaddoncompat/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "dev.ninjdai.doaddoncompat.fabric.DoAddonCompatFabric"
+    ],
+    "client": [
+      "dev.ninjdai.doaddoncompat.fabric.client.DoAddonCompatFabricClient"
+    ]
+  },
+  "mixins": [
+    "doaddoncompat.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.15.10",
+    "minecraft": "~1.20.1",
+    "java": ">=17",
+    "architectury": ">=9.2.14",
+    "meadow": ">=1.3.8",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}

@@ -1,0 +1,26 @@
+{
+    "type": "create:emptying",
+    "ingredients": [
+        {
+            "item": "brewery:whiskey_carrasconlabel"
+        }
+    ],
+    "results": [
+        {
+            "item": "brewery:beer_mug"
+        },
+        {
+            "fluid": "doaddoncompat:whiskey_carrasconlabel",
+            "amount": 27000
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "brewery",
+                "create"
+            ]
+        }
+    ]
+}

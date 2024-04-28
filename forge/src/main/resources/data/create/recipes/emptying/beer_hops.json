@@ -1,0 +1,27 @@
+{
+    "type": "create:emptying",
+    "ingredients": [
+        {
+            "item": "brewery:beer_hops"
+        }
+    ],
+    "results": [
+        {
+            "item": "brewery:beer_mug"
+        },
+        {
+            "fluid": "doaddoncompat:beer_hops",
+            "amount": 250
+        }
+    ],
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "brewery"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        }
+    ]
+}

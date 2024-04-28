@@ -1,0 +1,42 @@
+modLoader = "javafml"
+loaderVersion = "[47,)"
+#issueTrackerURL = ""
+license = "GPLv3"
+
+[[mods]]
+modId = "doaddoncompat"
+version = "${version}"
+displayName = "[Let's Do Addon] Compat"
+authors = "Ninjdai"
+description = '''
+This is an example description! Tell everyone what your mod is about!
+'''
+#logoFile = ""
+
+[[dependencies.doaddoncompat]]
+modId = "forge"
+mandatory = true
+versionRange = "[47,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.doaddoncompat]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.20.1,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.doaddoncompat]]
+modId = "architectury"
+mandatory = true
+versionRange = "[9.2.14,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.doaddoncompat]]
+modId = "meadow"
+mandatory = false
+versionRange = "[1.3.8,)"
+ordering = "AFTER"
+side = "BOTH"

@@ -1,0 +1,26 @@
+{
+    "type": "create:emptying",
+    "ingredients": [
+        {
+            "item": "vinery:jungle_red_grapejuice_bottle"
+        }
+    ],
+    "results": [
+        {
+            "item": "vinery:wine_bottle"
+        },
+        {
+            "fluid": "doaddoncompat:jungle_red_grapejuice",
+            "amount": 27000
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "vinery",
+                "create"
+            ]
+        }
+    ]
+}

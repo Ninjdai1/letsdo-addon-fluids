@@ -1,0 +1,27 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "item": "brewery:beer_mug"
+        },
+        {
+            "fluid": "doaddoncompat:whiskey_maggoallan",
+            "nbt": {},
+            "amount": 27000
+        }
+    ],
+    "results": [
+        {
+            "item": "brewery:whiskey_maggoallan"
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "brewery",
+                "create"
+            ]
+        }
+    ]
+}
