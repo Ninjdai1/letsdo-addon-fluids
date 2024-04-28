@@ -31,6 +31,9 @@ subprojects {
         // for more information about repositories.
         maven { name = "Resourceful Maven"; description = "Botarium & ResourcefulLib"; url = "https://maven.teamresourceful.com/repository/maven-public/" }
         maven { name = "Devos Maven"; description = "Create Fabric, Porting Lib, Forge Tags, Milk Lib & Fabric Registrate"; url = "https://mvn.devos.one/snapshots/" }
+        maven { name = "Curseforge Maven"; description = "Forge Config API Port"; url = "https://cursemaven.com" }
+        maven { name = "JamiesWhiteShirt Maven"; description = "Reach Entity Attributes"; url = "https://maven.jamieswhiteshirt.com/libs-release" }
+        maven { name = "Tterrag Maven"; description = "Create, Forge Registrate & Forge Flywheel"; url = "https://maven.tterrag.com" }
         exclusiveContent {
             forRepository {
                 maven {
@@ -42,6 +45,7 @@ subprojects {
                 includeGroup "maven.modrinth"
             }
         }
+        maven { name = "Jitpack maven"; description = "Mixin Extras & Fabric ASM"; url = "https://jitpack.io/" } //NOTE: LEAVE THIS AS LAST
     }
 
     dependencies {
