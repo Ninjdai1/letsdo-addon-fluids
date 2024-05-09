@@ -11,6 +11,7 @@
         },
         {
             "fluid": "doaddoncompat:beer_haley",
+            "nbt": {},
             "amount": 27000
         }
     ],

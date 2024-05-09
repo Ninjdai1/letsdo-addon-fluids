@@ -11,6 +11,7 @@
         },
         {
             "fluid": "doaddoncompat:beer_barley",
+            "nbt": {},
             "amount": 250
         }
     ],

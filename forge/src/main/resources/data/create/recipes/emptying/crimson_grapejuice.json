@@ -11,6 +11,7 @@
         },
         {
             "fluid": "doaddoncompat:crimson_grapejuice",
+            "nbt": {},
             "amount": 250
         }
     ],

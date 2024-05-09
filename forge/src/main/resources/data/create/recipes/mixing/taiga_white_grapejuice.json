@@ -1,16 +1,14 @@
 {
-    "type": "create:emptying",
+    "type": "create:mixing",
     "ingredients": [
         {
-            "item": "brewery:beer_hops"
+            "item": "vinery:taiga_grapes_white",
+            "count": 3
         }
     ],
     "results": [
         {
-            "item": "brewery:beer_mug"
-        },
-        {
-            "fluid": "doaddoncompat:beer_hops",
+            "fluid": "doaddoncompat:taiga_white_grapejuice",
             "nbt": {},
             "amount": 250
         }
@@ -18,7 +16,7 @@
     "conditions": [
         {
             "type": "forge:mod_loaded",
-            "modid": "brewery"
+            "modid": "vinery"
         },
         {
             "type": "forge:mod_loaded",

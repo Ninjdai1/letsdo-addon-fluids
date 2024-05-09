@@ -11,6 +11,7 @@
         },
         {
             "fluid": "doaddoncompat:jungle_white_grapejuice",
+            "nbt": {},
             "amount": 250
         }
     ],

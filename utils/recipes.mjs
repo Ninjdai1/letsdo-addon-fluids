@@ -1,22 +1,22 @@
 import fs from "fs";
 
-const grapejuices = {
+const brews = {
     vinery: [
-        { empty_bottle: "vinery:wine_bottle", filled_bottle: "red_grapejuice_wine_bottle", fluid: "red_grapejuice"},
-        { empty_bottle: "vinery:wine_bottle", filled_bottle: "white_grapejuice_wine_bottle", fluid: "white_grapejuice"},
+        { empty_bottle: "vinery:wine_bottle", filled_bottle: "red_grapejuice_wine_bottle", fluid: "red_grapejuice", press: "vinery:red_grape"},
+        { empty_bottle: "vinery:wine_bottle", filled_bottle: "white_grapejuice_wine_bottle", fluid: "white_grapejuice", press: "vinery:white_grape"},
 
-        { empty_bottle: "vinery:wine_bottle", filled_bottle: "jungle_red_grapejuice_bottle", fluid: "jungle_red_grapejuice"},
-        { empty_bottle: "vinery:wine_bottle", filled_bottle: "jungle_white_grapejuice_bottle", fluid: "jungle_white_grapejuice"},
+        { empty_bottle: "vinery:wine_bottle", filled_bottle: "jungle_red_grapejuice_bottle", fluid: "jungle_red_grapejuice", press: "vinery:jungle_grapes_red"},
+        { empty_bottle: "vinery:wine_bottle", filled_bottle: "jungle_white_grapejuice_bottle", fluid: "jungle_white_grapejuice", press: "vinery:jungle_grapes_white"},
 
-        { empty_bottle: "vinery:wine_bottle", filled_bottle: "savanna_red_grapejuice_bottle", fluid: "savanna_red_grapejuice"},
-        { empty_bottle: "vinery:wine_bottle", filled_bottle: "savanna_white_grapejuice_bottle", fluid: "savanna_white_grapejuice"},
+        { empty_bottle: "vinery:wine_bottle", filled_bottle: "savanna_red_grapejuice_bottle", fluid: "savanna_red_grapejuice", press: "vinery:savanna_grapes_red"},
+        { empty_bottle: "vinery:wine_bottle", filled_bottle: "savanna_white_grapejuice_bottle", fluid: "savanna_white_grapejuice", press: "vinery:savanna_grapes_white"},
 
-        { empty_bottle: "vinery:wine_bottle", filled_bottle: "taiga_red_grapejuice_bottle", fluid: "taiga_red_grapejuice"},
-        { empty_bottle: "vinery:wine_bottle", filled_bottle: "taiga_white_grapejuice_bottle", fluid: "taiga_white_grapejuice"},
+        { empty_bottle: "vinery:wine_bottle", filled_bottle: "taiga_red_grapejuice_bottle", fluid: "taiga_red_grapejuice", press: "vinery:taiga_grapes_red"},
+        { empty_bottle: "vinery:wine_bottle", filled_bottle: "taiga_white_grapejuice_bottle", fluid: "taiga_white_grapejuice", press: "vinery:taiga_grapes_white"},
     ],
     nethervinery: [
-        { empty_bottle: "vinery:wine_bottle", filled_bottle: "crimson_grapejuice", fluid: "crimson_grapejuice"},
-        { empty_bottle: "vinery:wine_bottle", filled_bottle: "warped_grapejuice", fluid: "warped_grapejuice"},
+        { empty_bottle: "vinery:wine_bottle", filled_bottle: "crimson_grapejuice", fluid: "crimson_grapejuice", press: "nethervinery:crimson_grape"},
+        { empty_bottle: "vinery:wine_bottle", filled_bottle: "warped_grapejuice", fluid: "warped_grapejuice", press: "nethervinery:warped_grape"},
     ],
     brewery: [
         { empty_bottle: "brewery:beer_mug", filled_bottle: "beer_wheat", fluid: "beer_wheat"},
@@ -56,6 +56,7 @@ const createEmptyingRecipe = ({fluidData, mod, loader}) => {
             },
             {
                 fluid: `${MOD_ID}:${fluidData.fluid}`,
+                nbt: {},
                 amount: LOADER_FLUID_QUANTITIES.bottles[loader]
             }
         ],
@@ -102,6 +103,35 @@ const createFillingRecipe = ({fluidData, mod, loader}) => {
     return recipe;
 }
 
+const createMixingRecipe = ({fluidData, mod, loader}) => {
+    const recipe = {
+        type: "create:mixing",
+        ingredients: [
+            {
+                item: fluidData.press,
+                count: 3
+            },
+        ],
+        results: [
+            {
+                fluid: `${MOD_ID}:${fluidData.fluid}`,
+                nbt: {},
+                amount: LOADER_FLUID_QUANTITIES.bottles[loader]
+            }
+        ],
+        
+    }
+    loader == "fabric" ? 
+        recipe["fabric:load_conditions"] = [{
+            condition: "fabric:all_mods_loaded", values: [`${mod}`, "create"]
+        }]:
+        recipe.conditions = [
+            { type: "forge:mod_loaded", modid: `${mod}` },
+            { type: "forge:mod_loaded", modid: "create" }
+        ]
+    return recipe;
+}
+
 function writeRecipe({recipe, loader, targetMod, targetType, item}) {
     if(!recipe) return;
     const dir = `../${loader}/src/main/resources/data/${targetMod}/recipes/${targetType}`;
@@ -114,31 +144,45 @@ function writeRecipe({recipe, loader, targetMod, targetType, item}) {
 }
 
 for(const loader of ["fabric", "forge"]){
-    for(const mod of Object.keys(grapejuices)){
-        const juices = grapejuices[mod];
+    for(const mod of Object.keys(brews)){
+        const juices = brews[mod];
         for(const juice in juices){
+            const brew = brews[mod][juice];
             writeRecipe({
                 recipe: createFillingRecipe({
-                    fluidData: grapejuices[mod][juice],
+                    fluidData: brew,
                     mod: mod,
                     loader: loader
                 }),
                 loader: loader,
                 targetMod: "create",
                 targetType: "filling",
-                item: grapejuices[mod][juice].filled_bottle
+                item: brew.filled_bottle
             });
             writeRecipe({
                 recipe: createEmptyingRecipe({
-                    fluidData: grapejuices[mod][juice],
+                    fluidData: brew,
                     mod: mod,
                     loader: loader
                 }),
                 loader: loader,
                 targetMod: "create",
                 targetType: "emptying",
-                item: grapejuices[mod][juice].filled_bottle
+                item: brew.filled_bottle
             });
+            if(brew.press){
+                writeRecipe({
+                    recipe: createMixingRecipe({
+                        fluidData: brew,
+                        mod: mod,
+                        loader: loader
+                    }),
+                    loader: loader,
+                    targetMod: "create",
+                    targetType: "mixing",
+                    item: brew.fluid
+                });
+            }
         }
     }
 }

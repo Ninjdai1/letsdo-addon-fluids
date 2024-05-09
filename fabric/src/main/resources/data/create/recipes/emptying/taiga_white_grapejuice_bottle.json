@@ -11,6 +11,7 @@
         },
         {
             "fluid": "doaddoncompat:taiga_white_grapejuice",
+            "nbt": {},
             "amount": 27000
         }
     ],

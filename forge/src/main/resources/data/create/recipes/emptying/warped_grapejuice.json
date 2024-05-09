@@ -11,6 +11,7 @@
         },
         {
             "fluid": "doaddoncompat:warped_grapejuice",
+            "nbt": {},
             "amount": 250
         }
     ],

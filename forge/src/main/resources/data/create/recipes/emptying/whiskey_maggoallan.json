@@ -11,6 +11,7 @@
         },
         {
             "fluid": "doaddoncompat:whiskey_maggoallan",
+            "nbt": {},
             "amount": 250
         }
     ],

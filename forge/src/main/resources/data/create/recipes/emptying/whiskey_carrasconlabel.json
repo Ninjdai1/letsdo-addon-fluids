@@ -11,6 +11,7 @@
         },
         {
             "fluid": "doaddoncompat:whiskey_carrasconlabel",
+            "nbt": {},
             "amount": 250
         }
     ],
