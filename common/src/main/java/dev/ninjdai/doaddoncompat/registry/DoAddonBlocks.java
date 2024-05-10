@@ -16,7 +16,7 @@ public class DoAddonBlocks {
     public static final ResourcefulRegistry<Block> BLOCKS = ResourcefulRegistries.create(BuiltInRegistries.BLOCK, DoAddonCompat.MOD_ID);
     public static final ResourcefulRegistry<Block> TRANSPARENT_BLOCKS = ResourcefulRegistries.create(BLOCKS);
 
-    public static final RegistryEntry<Block> YEAST_BLOCK = BLOCKS.register("yeast", () -> new LavaLikeLiquidBlock(DoAddonFluidProperties.YEAST, BlockBehaviour.Properties.copy(Blocks.LAVA).mapColor(MapColor.COLOR_BROWN)));
+    //public static final RegistryEntry<Block> YEAST_BLOCK = BLOCKS.register("yeast", () -> new LavaLikeLiquidBlock(DoAddonFluidProperties.YEAST, BlockBehaviour.Properties.copy(Blocks.LAVA).mapColor(MapColor.COLOR_BROWN)));
     public static final RegistryEntry<Block> BUFFALO_MILK_BLOCK = BLOCKS.register("buffalo_milk", () -> new BotariumLiquidBlock(DoAddonFluidProperties.BUFFALO_MILK, BlockBehaviour.Properties.copy(Blocks.WATER).mapColor(MapColor.TERRACOTTA_WHITE)));
     public static final RegistryEntry<Block> AMETHYST_MILK_BLOCK = BLOCKS.register("amethyst_milk", () -> new BotariumLiquidBlock(DoAddonFluidProperties.AMETHYST_MILK, BlockBehaviour.Properties.copy(Blocks.WATER).mapColor(MapColor.TERRACOTTA_PURPLE)));
     public static final RegistryEntry<Block> SHEEP_MILK_BLOCK = BLOCKS.register("sheep_milk", () -> new BotariumLiquidBlock(DoAddonFluidProperties.SHEEP_MILK, BlockBehaviour.Properties.copy(Blocks.WATER).mapColor(MapColor.TERRACOTTA_WHITE)));
