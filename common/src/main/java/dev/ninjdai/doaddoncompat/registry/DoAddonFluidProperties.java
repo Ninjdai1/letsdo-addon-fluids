@@ -134,9 +134,9 @@ public class DoAddonFluidProperties {
     //Vinery
     private static final Integer GRAPEJUICE_VISCOSITY = 2000;
     public static final FluidData RED_GRAPEJUICE = FLUID_PROPERTIES.register("red_grapejuice", FluidProperties.create()
-            .still(new ResourceLocation("minecraft", "block/red_grapejuice"))
-            .flowing(new ResourceLocation("minecraft", "block/red_grapejuice"))
-            .overlay(new ResourceLocation("minecraft", "block/red_grapejuice"))
+            .still(new ResourceLocation("vinery", "block/red_grapejuice"))
+            .flowing(new ResourceLocation("vinery", "block/red_grapejuice"))
+            .overlay(new ResourceLocation("vinery", "block/red_grapejuice"))
             .screenOverlay(new ResourceLocation("textures/misc/underwater.png"))
             //.tintColor(DoAddonColors.RED_GRAPEJUICE.value)
             .canConvertToSource(false)
@@ -149,9 +149,9 @@ public class DoAddonFluidProperties {
             .density(1500)
     );
     public static final FluidData WHITE_GRAPEJUICE = FLUID_PROPERTIES.register("white_grapejuice", FluidProperties.create()
-            .still(new ResourceLocation("minecraft", "block/white_grapejuice"))
-            .flowing(new ResourceLocation("minecraft", "block/white_grapejuice"))
-            .overlay(new ResourceLocation("minecraft", "block/white_grapejuice"))
+            .still(new ResourceLocation("vinery", "block/white_grapejuice"))
+            .flowing(new ResourceLocation("vinery", "block/white_grapejuice"))
+            .overlay(new ResourceLocation("vinery", "block/white_grapejuice"))
             .screenOverlay(new ResourceLocation("textures/misc/underwater.png"))
             //.tintColor(DoAddonColors.WHITE_GRAPEJUICE.value)
             .canConvertToSource(false)
