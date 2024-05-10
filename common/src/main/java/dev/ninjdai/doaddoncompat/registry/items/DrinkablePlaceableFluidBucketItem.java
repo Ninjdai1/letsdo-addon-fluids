@@ -3,6 +3,8 @@ package dev.ninjdai.doaddoncompat.registry.items;
 import earth.terrarium.botarium.common.registry.fluid.FluidBucketItem;
 import earth.terrarium.botarium.common.registry.fluid.FluidData;
 import net.minecraft.advancements.CriteriaTriggers;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
@@ -11,6 +13,13 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.BucketPickup;
+import net.minecraft.world.level.block.LiquidBlockContainer;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.HitResult;
 import net.satisfyu.meadow.registry.ObjectRegistry;
 import org.jetbrains.annotations.NotNull;
 
@@ -47,8 +56,36 @@ public class DrinkablePlaceableFluidBucketItem extends FluidBucketItem {
 
     @Override
     public InteractionResultHolder<ItemStack> use(@NotNull Level level, Player player, @NotNull InteractionHand interactionHand) {
-        if (!player.isCrouching() && getData().getInformation().canPlace()) {
-            return super.use(level, player, interactionHand);
+        if ((!player.isCrouching()) && getData().getInformation().canPlace()) {
+            ItemStack itemStack = player.getItemInHand(interactionHand);
+            BlockHitResult blockHitResult = getPlayerPOVHitResult(level, player, net.minecraft.world.level.ClipContext.Fluid.NONE);
+            if (blockHitResult.getType() == HitResult.Type.MISS) {
+                return InteractionResultHolder.pass(itemStack);
+            } else if (blockHitResult.getType() != HitResult.Type.BLOCK) {
+                return InteractionResultHolder.pass(itemStack);
+            } else {
+                BlockPos blockPos = blockHitResult.getBlockPos();
+                Direction direction = blockHitResult.getDirection();
+                BlockPos blockPos2 = blockPos.relative(direction);
+                if (level.mayInteract(player, blockPos) && player.mayUseItemAt(blockPos2, direction, itemStack)) {
+                    BlockState blockState;
+                    blockState = level.getBlockState(blockPos);
+                    BlockPos blockPos3 = blockState.getBlock() instanceof LiquidBlockContainer ? blockPos : blockPos2;
+                    if (this.emptyContents(player, level, blockPos3, blockHitResult)) {
+                        this.checkExtraContent(player, level, itemStack, blockPos3);
+                        if (player instanceof ServerPlayer) {
+                            CriteriaTriggers.PLACED_BLOCK.trigger((ServerPlayer)player, blockPos3, itemStack);
+                        }
+
+                        player.awardStat(Stats.ITEM_USED.get(this));
+                        return InteractionResultHolder.sidedSuccess(!player.getAbilities().instabuild ? new ItemStack(ObjectRegistry.WOODEN_BUCKET.get()) : itemStack, level.isClientSide());
+                    } else {
+                        return InteractionResultHolder.fail(itemStack);
+                    }
+                } else {
+                    return InteractionResultHolder.fail(itemStack);
+                }
+            }
         }
         return ItemUtils.startUsingInstantly(level, player, interactionHand);
     }
