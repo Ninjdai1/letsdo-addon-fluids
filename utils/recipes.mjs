@@ -18,7 +18,7 @@ const brews = {
         { empty_bottle: "vinery:wine_bottle", filled_bottle: "crimson_grapejuice", fluid: "crimson_grapejuice", press: "nethervinery:crimson_grape"},
         { empty_bottle: "vinery:wine_bottle", filled_bottle: "warped_grapejuice", fluid: "warped_grapejuice", press: "nethervinery:warped_grape"},
     ],
-    brewery: [
+    /*brewery: [
         { empty_bottle: "brewery:beer_mug", filled_bottle: "beer_wheat", fluid: "beer_wheat"},
         { empty_bottle: "brewery:beer_mug", filled_bottle: "beer_barley", fluid: "beer_barley"},
         { empty_bottle: "brewery:beer_mug", filled_bottle: "beer_hops", fluid: "beer_hops"},
@@ -29,7 +29,7 @@ const brews = {
         { empty_bottle: "brewery:beer_mug", filled_bottle: "whiskey_cristelwalker", fluid: "whiskey_cristelwalker"},
         { empty_bottle: "brewery:beer_mug", filled_bottle: "whiskey_maggoallan", fluid: "whiskey_maggoallan"},
         { empty_bottle: "brewery:beer_mug", filled_bottle: "whiskey_carrasconlabel", fluid: "whiskey_carrasconlabel"},
-    ]
+    ]*/
 }
 
 const MOD_ID = "doaddoncompat"

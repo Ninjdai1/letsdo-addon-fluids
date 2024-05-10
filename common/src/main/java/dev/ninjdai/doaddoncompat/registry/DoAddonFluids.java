@@ -18,8 +18,8 @@ public class DoAddonFluids {
     //public static final RegistryEntry<Fluid> YEAST = FLUIDS.register("yeast", () -> new BotariumSourceFluid(DoAddonFluidProperties.YEAST));
     //public static final RegistryEntry<Fluid> YEAST_FLOWING = FLUIDS.register("flowing_yeast", () -> new BotariumFlowingFluid(DoAddonFluidProperties.YEAST));
 
-    //VINERY
-    public static final RegistryEntry<Fluid> WHEAT_BEER = FLUIDS.register("beer_wheat", () -> new BotariumSourceFluid(DoAddonFluidProperties.WHEAT_BEER));
+    //BREWERY
+    /*public static final RegistryEntry<Fluid> WHEAT_BEER = FLUIDS.register("beer_wheat", () -> new BotariumSourceFluid(DoAddonFluidProperties.WHEAT_BEER));
     public static final RegistryEntry<Fluid> WHEAT_BEER_FLOWING = FLUIDS.register("flowing_beer_wheat", () -> new BotariumFlowingFluid(DoAddonFluidProperties.WHEAT_BEER));
     public static final RegistryEntry<Fluid> BARLEY_BEER = FLUIDS.register("beer_barley", () -> new BotariumSourceFluid(DoAddonFluidProperties.BARLEY_BEER));
     public static final RegistryEntry<Fluid> BARLEY_BEER_FLOWING = FLUIDS.register("flowing_beer_barley", () -> new BotariumFlowingFluid(DoAddonFluidProperties.BARLEY_BEER));
@@ -38,7 +38,7 @@ public class DoAddonFluids {
     public static final RegistryEntry<Fluid> MAGGOALLAN_WHISKEY_FLOWING = FLUIDS.register("flowing_whiskey_maggoallan", () -> new BotariumFlowingFluid(DoAddonFluidProperties.MAGGOALLAN_WHISKEY));
     public static final RegistryEntry<Fluid> CARRASCONLABEL_WHISKEY = FLUIDS.register("whiskey_carrasconlabel", () -> new BotariumSourceFluid(DoAddonFluidProperties.CARRASCONLABEL_WHISKEY));
     public static final RegistryEntry<Fluid> CARRASCONLABEL_WHISKEY_FLOWING = FLUIDS.register("flowing_whiskey_carrasconlabel", () -> new BotariumFlowingFluid(DoAddonFluidProperties.CARRASCONLABEL_WHISKEY));
-
+    */
 
     //VINERY
     public static final RegistryEntry<Fluid> RED_GRAPEJUICE = FLUIDS.register("red_grapejuice", () -> new BotariumSourceFluid(DoAddonFluidProperties.RED_GRAPEJUICE));
