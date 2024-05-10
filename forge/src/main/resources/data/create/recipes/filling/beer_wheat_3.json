@@ -1,0 +1,33 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "item": "brewery:beer_mug"
+        },
+        {
+            "fluid": "doaddoncompat:beer_wheat",
+            "nbt": {
+                "brewery.beer_quality": 3
+            },
+            "amount": 250
+        }
+    ],
+    "results": [
+        {
+            "item": "brewery:beer_wheat",
+            "itemTag": {
+                "brewery.beer_quality": 3
+            }
+        }
+    ],
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "brewery"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        }
+    ]
+}

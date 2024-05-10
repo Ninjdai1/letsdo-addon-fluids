@@ -1,0 +1,33 @@
+{
+    "type": "create:emptying",
+    "ingredients": [
+        {
+            "item": "brewery:whiskey_maggoallan",
+            "itemTag": {
+                "brewery.beer_quality": 3
+            }
+        }
+    ],
+    "results": [
+        {
+            "item": "brewery:beer_mug"
+        },
+        {
+            "fluid": "doaddoncompat:whiskey_maggoallan",
+            "nbt": {
+                "brewery.beer_quality": 3
+            },
+            "amount": 250
+        }
+    ],
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "brewery"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        }
+    ]
+}

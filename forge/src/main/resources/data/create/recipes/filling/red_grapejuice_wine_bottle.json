@@ -1,0 +1,29 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "item": "vinery:wine_bottle"
+        },
+        {
+            "fluid": "doaddoncompat:red_grapejuice",
+            "nbt": {},
+            "amount": 250
+        }
+    ],
+    "results": [
+        {
+            "item": "vinery:red_grapejuice_wine_bottle",
+            "itemTag": {}
+        }
+    ],
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "vinery"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        }
+    ]
+}

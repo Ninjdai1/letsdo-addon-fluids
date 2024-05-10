@@ -1,0 +1,25 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "item": "vinery:taiga_grapes_white",
+            "count": 3
+        }
+    ],
+    "results": [
+        {
+            "fluid": "doaddoncompat:taiga_white_grapejuice",
+            "nbt": {},
+            "amount": 27000
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "vinery",
+                "create"
+            ]
+        }
+    ]
+}

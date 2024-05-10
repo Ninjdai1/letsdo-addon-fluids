@@ -1,0 +1,33 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "item": "brewery:beer_mug"
+        },
+        {
+            "fluid": "doaddoncompat:whiskey_carrasconlabel",
+            "nbt": {
+                "brewery.beer_quality": 2
+            },
+            "amount": 250
+        }
+    ],
+    "results": [
+        {
+            "item": "brewery:whiskey_carrasconlabel",
+            "itemTag": {
+                "brewery.beer_quality": 2
+            }
+        }
+    ],
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "brewery"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        }
+    ]
+}

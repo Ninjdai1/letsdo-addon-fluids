@@ -32,8 +32,6 @@ const brews = {
     ]
 }
 
-//brewery:beer_quality 1-3
-
 const MOD_ID = "doaddoncompat"
 const LOADER_FLUID_QUANTITIES = {
     bottles: {
@@ -42,12 +40,13 @@ const LOADER_FLUID_QUANTITIES = {
     }
 }
 
-const createEmptyingRecipe = ({fluidData, mod, loader}) => {
+const createEmptyingRecipe = ({fluidData, mod, loader, customNBT={}}) => {
     const recipe = {
         type: "create:emptying",
         ingredients: [
             {
-                item: `${mod}:${fluidData.filled_bottle}`
+                item: `${mod}:${fluidData.filled_bottle}`,
+                itemTag: customNBT
             }
         ],
         results: [
@@ -56,7 +55,7 @@ const createEmptyingRecipe = ({fluidData, mod, loader}) => {
             },
             {
                 fluid: `${MOD_ID}:${fluidData.fluid}`,
-                nbt: {},
+                nbt: customNBT,
                 amount: LOADER_FLUID_QUANTITIES.bottles[loader]
             }
         ],
@@ -72,7 +71,7 @@ const createEmptyingRecipe = ({fluidData, mod, loader}) => {
     return recipe;
 }
 
-const createFillingRecipe = ({fluidData, mod, loader}) => {
+const createFillingRecipe = ({fluidData, mod, loader, customNBT={}}) => {
     const recipe = {
         type: "create:filling",
         ingredients: [
@@ -81,13 +80,14 @@ const createFillingRecipe = ({fluidData, mod, loader}) => {
             },
             {
                 fluid: `${MOD_ID}:${fluidData.fluid}`,
-                nbt: {},
+                nbt: customNBT,
                 amount: LOADER_FLUID_QUANTITIES.bottles[loader]
             }
         ],
         results: [
             {
-                item: `${mod}:${fluidData.filled_bottle}`
+                item: `${mod}:${fluidData.filled_bottle}`,
+                itemTag: customNBT
             }
         ],
         
@@ -132,56 +132,80 @@ const createMixingRecipe = ({fluidData, mod, loader}) => {
     return recipe;
 }
 
-function writeRecipe({recipe, loader, targetMod, targetType, item}) {
+function writeRecipe({recipe, loader, targetMod, targetType, item, customIndex}) {
     if(!recipe) return;
     const dir = `../${loader}/src/main/resources/data/${targetMod}/recipes/${targetType}`;
     
     if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
-    fs.writeFile(`${dir}/${item}.json`, JSON.stringify(recipe, undefined, 4), (err) => {
+    fs.writeFile(`${dir}/${item}${customIndex ? `_${customIndex}`:""}.json`, JSON.stringify(recipe, undefined, 4), (err) => {
         if (err)
             console.log(err);
     });
 }
 
+function brewRecipes({brew, mod, loader, customNBT, customIndex}){
+    writeRecipe({
+        recipe: createFillingRecipe({
+            fluidData: brew,
+            mod: mod,
+            loader: loader,
+            customNBT: customNBT,
+        }),
+        loader: loader, targetMod: "create", targetType: "filling", item: brew.filled_bottle,
+        customIndex: customIndex
+    });
+    writeRecipe({
+        recipe: createEmptyingRecipe({
+            fluidData: brew,
+            mod: mod,
+            loader: loader,
+            customNBT: customNBT,
+        }),
+        loader: loader, targetMod: "create", targetType: "emptying", item: brew.filled_bottle,
+        customIndex: customIndex
+    });
+    if(brew.press){
+        writeRecipe({
+            recipe: createMixingRecipe({
+                fluidData: brew,
+                mod: mod,
+                loader: loader,
+                customNBT: customNBT,
+            }),
+            loader: loader, targetMod: "create", targetType: "mixing", item: brew.fluid,
+            customIndex: customIndex
+        });
+    }
+}
+
+const custom_nbt = {
+    "brewery": { count: 3, nbt: "brewery.beer_quality"}
+};
+
 for(const loader of ["fabric", "forge"]){
     for(const mod of Object.keys(brews)){
-        const juices = brews[mod];
-        for(const juice in juices){
-            const brew = brews[mod][juice];
-            writeRecipe({
-                recipe: createFillingRecipe({
-                    fluidData: brew,
-                    mod: mod,
-                    loader: loader
-                }),
-                loader: loader,
-                targetMod: "create",
-                targetType: "filling",
-                item: brew.filled_bottle
-            });
-            writeRecipe({
-                recipe: createEmptyingRecipe({
-                    fluidData: brew,
-                    mod: mod,
-                    loader: loader
-                }),
-                loader: loader,
-                targetMod: "create",
-                targetType: "emptying",
-                item: brew.filled_bottle
-            });
-            if(brew.press){
-                writeRecipe({
-                    recipe: createMixingRecipe({
-                        fluidData: brew,
+        const mod_brews = brews[mod];
+        for(const brew_id in mod_brews){
+            const brew = brews[mod][brew_id];
+            if(custom_nbt[mod]){
+                const modNBT = custom_nbt[mod];
+                for (let c = 1; c <= modNBT.count; c++) {
+                    const nbt = {};
+                    nbt[modNBT.nbt] = c;
+                    brewRecipes({
+                        brew: brew,
                         mod: mod,
-                        loader: loader
-                    }),
+                        loader: loader,
+                        customNBT: nbt,
+                        customIndex: c
+                    })
+                }
+            } else {
+                brewRecipes({
+                    brew: brew,
+                    mod: mod,
                     loader: loader,
-                    targetMod: "create",
-                    targetType: "mixing",
-                    item: brew.fluid
-                });
+                })
             }
         }
     }

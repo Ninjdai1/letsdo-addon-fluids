@@ -1,0 +1,28 @@
+{
+    "type": "create:emptying",
+    "ingredients": [
+        {
+            "item": "nethervinery:warped_grapejuice",
+            "itemTag": {}
+        }
+    ],
+    "results": [
+        {
+            "item": "vinery:wine_bottle"
+        },
+        {
+            "fluid": "doaddoncompat:warped_grapejuice",
+            "nbt": {},
+            "amount": 27000
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "nethervinery",
+                "create"
+            ]
+        }
+    ]
+}
