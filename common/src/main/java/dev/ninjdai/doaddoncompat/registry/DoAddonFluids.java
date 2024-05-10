@@ -15,8 +15,8 @@ public class DoAddonFluids {
 
     public static final ResourcefulRegistry<Fluid> FLUIDS = ResourcefulRegistries.create(BuiltInRegistries.FLUID, DoAddonCompat.MOD_ID);
 
-    public static final RegistryEntry<Fluid> YEAST = FLUIDS.register("yeast", () -> new BotariumSourceFluid(DoAddonFluidProperties.YEAST));
-    public static final RegistryEntry<Fluid> YEAST_FLOWING = FLUIDS.register("flowing_yeast", () -> new BotariumFlowingFluid(DoAddonFluidProperties.YEAST));
+    //public static final RegistryEntry<Fluid> YEAST = FLUIDS.register("yeast", () -> new BotariumSourceFluid(DoAddonFluidProperties.YEAST));
+    //public static final RegistryEntry<Fluid> YEAST_FLOWING = FLUIDS.register("flowing_yeast", () -> new BotariumFlowingFluid(DoAddonFluidProperties.YEAST));
 
     //VINERY
     public static final RegistryEntry<Fluid> WHEAT_BEER = FLUIDS.register("beer_wheat", () -> new BotariumSourceFluid(DoAddonFluidProperties.WHEAT_BEER));
