@@ -8,7 +8,7 @@
     ],
     "results": [
         {
-            "fluid": "doaddoncompat:red_grapejuice",
+            "fluid": "doaddonfluids:red_grapejuice",
             "nbt": {},
             "amount": 27000
         }

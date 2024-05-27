@@ -8,7 +8,7 @@
     ],
     "results": [
         {
-            "fluid": "doaddoncompat:taiga_red_grapejuice",
+            "fluid": "doaddonfluids:taiga_red_grapejuice",
             "nbt": {},
             "amount": 27000
         }

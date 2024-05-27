@@ -1,4 +1,4 @@
-package dev.ninjdai.doaddoncompat.fabric;
+package dev.ninjdai.doaddonfluids.fabric;
 
 import net.fabricmc.loader.api.FabricLoader;
 

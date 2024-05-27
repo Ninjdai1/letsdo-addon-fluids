@@ -1,19 +1,18 @@
-package dev.ninjdai.doaddoncompat.registry;
+package dev.ninjdai.doaddonfluids.registry;
 
 
 import com.teamresourceful.resourcefullib.common.registry.RegistryEntry;
 import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistries;
 import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistry;
-import dev.ninjdai.doaddoncompat.DoAddonCompat;
+import dev.ninjdai.doaddonfluids.DoAddonFluids;
 import earth.terrarium.botarium.common.registry.fluid.BotariumFlowingFluid;
 import earth.terrarium.botarium.common.registry.fluid.BotariumSourceFluid;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.world.item.alchemy.PotionUtils;
 import net.minecraft.world.level.material.Fluid;
 
-public class DoAddonFluids {
+public class DoAddonFluid {
 
-    public static final ResourcefulRegistry<Fluid> FLUIDS = ResourcefulRegistries.create(BuiltInRegistries.FLUID, DoAddonCompat.MOD_ID);
+    public static final ResourcefulRegistry<Fluid> FLUIDS = ResourcefulRegistries.create(BuiltInRegistries.FLUID, DoAddonFluids.MOD_ID);
 
     //public static final RegistryEntry<Fluid> YEAST = FLUIDS.register("yeast", () -> new BotariumSourceFluid(DoAddonFluidProperties.YEAST));
     //public static final RegistryEntry<Fluid> YEAST_FLOWING = FLUIDS.register("flowing_yeast", () -> new BotariumFlowingFluid(DoAddonFluidProperties.YEAST));

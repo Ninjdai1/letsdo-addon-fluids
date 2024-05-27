@@ -1,7 +1,7 @@
-package dev.ninjdai.doaddoncompat.registry;
+package dev.ninjdai.doaddonfluids.registry;
 
-import dev.ninjdai.doaddoncompat.DoAddonCompat;
-import dev.ninjdai.doaddoncompat.utils.DoAddonColors;
+import dev.ninjdai.doaddonfluids.DoAddonFluids;
+import dev.ninjdai.doaddonfluids.utils.DoAddonColors;
 import earth.terrarium.botarium.common.registry.fluid.FluidData;
 import earth.terrarium.botarium.common.registry.fluid.FluidProperties;
 import earth.terrarium.botarium.common.registry.fluid.FluidRegistry;
@@ -10,13 +10,13 @@ import net.minecraft.world.level.pathfinder.BlockPathTypes;
 
 public class DoAddonFluidProperties {
 
-    public static final FluidRegistry FLUID_PROPERTIES = new FluidRegistry(DoAddonCompat.MOD_ID);
+    public static final FluidRegistry FLUID_PROPERTIES = new FluidRegistry(DoAddonFluids.MOD_ID);
 
     // Lava-like
     public static final FluidData YEAST = FLUID_PROPERTIES.register("yeast", FluidProperties.create()
-            .still(DoAddonCompat.id("block/blank_lava/blank_lava_still"))
-            .flowing(DoAddonCompat.id("block/blank_lava/blank_lava_flow"))
-            .overlay(DoAddonCompat.id("block/blank_lava/blank_lava_flow"))
+            .still(DoAddonFluids.id("block/blank_lava/blank_lava_still"))
+            .flowing(DoAddonFluids.id("block/blank_lava/blank_lava_flow"))
+            .overlay(DoAddonFluids.id("block/blank_lava/blank_lava_flow"))
             .screenOverlay(new ResourceLocation("textures/misc/underwater.png"))
             .tintColor(DoAddonColors.YEAST.value)
             .canConvertToSource(false)

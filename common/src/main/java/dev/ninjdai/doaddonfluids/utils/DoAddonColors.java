@@ -1,7 +1,7 @@
-package dev.ninjdai.doaddoncompat.utils;
+package dev.ninjdai.doaddonfluids.utils;
 
 import com.teamresourceful.resourcefullib.common.registry.RegistryEntry;
-import dev.ninjdai.doaddoncompat.registry.DoAddonFluidProperties;
+import dev.ninjdai.doaddonfluids.registry.DoAddonFluidProperties;
 import earth.terrarium.botarium.common.registry.fluid.BotariumFlowingFluid;
 import earth.terrarium.botarium.common.registry.fluid.BotariumSourceFluid;
 import net.minecraft.world.level.material.Fluid;

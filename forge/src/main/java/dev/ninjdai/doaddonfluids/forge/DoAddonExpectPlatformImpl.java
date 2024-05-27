@@ -1,4 +1,4 @@
-package dev.ninjdai.doaddoncompat.forge;
+package dev.ninjdai.doaddonfluids.forge;
 
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.loading.LoadingModList;

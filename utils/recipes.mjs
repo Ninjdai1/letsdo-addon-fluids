@@ -32,7 +32,7 @@ const brews = {
     ]*/
 }
 
-const MOD_ID = "doaddoncompat"
+const MOD_ID = "doaddonfluids"
 const LOADER_FLUID_QUANTITIES = {
     bottles: {
         forge: 250,

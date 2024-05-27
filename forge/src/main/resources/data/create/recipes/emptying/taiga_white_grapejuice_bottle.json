@@ -11,7 +11,7 @@
             "item": "vinery:wine_bottle"
         },
         {
-            "fluid": "doaddoncompat:taiga_white_grapejuice",
+            "fluid": "doaddonfluids:taiga_white_grapejuice",
             "nbt": {},
             "amount": 250
         }

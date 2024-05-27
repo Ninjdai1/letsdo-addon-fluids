@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "doaddoncompat",
+  "id": "doaddonfluids",
   "version": "${version}",
   "name": "[Let's Do Addon] Compat",
   "description": "This is an example description! Tell everyone what your mod is about!",
@@ -12,18 +12,18 @@
     "sources": "https://github.com/FabricMC/fabric-example-mod"
   },
   "license": "CC0-1.0",
-  "icon": "assets/doaddoncompat/icon.png",
+  "icon": "assets/doaddonfluids/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "dev.ninjdai.doaddoncompat.fabric.DoAddonCompatFabric"
+      "dev.ninjdai.doaddonfluids.fabric.DoAddonFluidsFabric"
     ],
     "client": [
-      "dev.ninjdai.doaddoncompat.fabric.client.DoAddonCompatFabricClient"
+      "dev.ninjdai.doaddonfluids.fabric.client.DoAddonFluidsFabricClient"
     ]
   },
   "mixins": [
-    "doaddoncompat.mixins.json"
+    "doaddonfluids.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.15.10",

@@ -1,4 +1,4 @@
-package dev.ninjdai.doaddoncompat;
+package dev.ninjdai.doaddonfluids;
 
 import dev.architectury.injectables.annotations.ExpectPlatform;
 import net.minecraft.world.entity.Entity;

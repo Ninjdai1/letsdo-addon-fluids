@@ -1,10 +1,10 @@
-package dev.ninjdai.doaddoncompat.registry;
+package dev.ninjdai.doaddonfluids.registry;
 
 import com.teamresourceful.resourcefullib.common.registry.RegistryEntry;
 import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistries;
 import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistry;
-import dev.ninjdai.doaddoncompat.DoAddonCompat;
-import dev.ninjdai.doaddoncompat.registry.blocks.fluids.LavaLikeLiquidBlock;
+import dev.ninjdai.doaddonfluids.DoAddonFluids;
+import dev.ninjdai.doaddonfluids.registry.blocks.fluids.LavaLikeLiquidBlock;
 import earth.terrarium.botarium.common.registry.fluid.BotariumLiquidBlock;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.Block;
@@ -13,7 +13,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 
 public class DoAddonBlocks {
-    public static final ResourcefulRegistry<Block> BLOCKS = ResourcefulRegistries.create(BuiltInRegistries.BLOCK, DoAddonCompat.MOD_ID);
+    public static final ResourcefulRegistry<Block> BLOCKS = ResourcefulRegistries.create(BuiltInRegistries.BLOCK, DoAddonFluids.MOD_ID);
     public static final ResourcefulRegistry<Block> TRANSPARENT_BLOCKS = ResourcefulRegistries.create(BLOCKS);
 
     //public static final RegistryEntry<Block> YEAST_BLOCK = BLOCKS.register("yeast", () -> new LavaLikeLiquidBlock(DoAddonFluidProperties.YEAST, BlockBehaviour.Properties.copy(Blocks.LAVA).mapColor(MapColor.COLOR_BROWN)));

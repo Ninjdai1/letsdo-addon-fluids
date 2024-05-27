@@ -1,4 +1,4 @@
-package dev.ninjdai.doaddoncompat.registry.blocks.fluids;
+package dev.ninjdai.doaddonfluids.registry.blocks.fluids;
 
 import earth.terrarium.botarium.common.registry.fluid.BotariumLiquidBlock;
 import earth.terrarium.botarium.common.registry.fluid.FluidData;

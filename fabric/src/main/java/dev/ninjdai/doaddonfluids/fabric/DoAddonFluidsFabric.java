@@ -1,10 +1,10 @@
-package dev.ninjdai.doaddoncompat.fabric;
+package dev.ninjdai.doaddonfluids.fabric;
 
 import net.fabricmc.api.ModInitializer;
 
-import dev.ninjdai.doaddoncompat.DoAddonCompat;
+import dev.ninjdai.doaddonfluids.DoAddonFluids;
 
-public final class DoAddonCompatFabric implements ModInitializer {
+public final class DoAddonFluidsFabric implements ModInitializer {
     @Override
     public void onInitialize() {
         // This code runs as soon as Minecraft is in a mod-load-ready state.
@@ -12,6 +12,6 @@ public final class DoAddonCompatFabric implements ModInitializer {
         // Proceed with mild caution.
 
         // Run our common setup.
-        DoAddonCompat.init();
+        DoAddonFluids.init();
     }
 }
