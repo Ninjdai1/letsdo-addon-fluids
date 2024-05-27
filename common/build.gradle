@@ -14,3 +14,18 @@ dependencies {
     // Create
     modCompileOnly("com.simibubi.create:create-fabric-${rootProject.minecraft_version}:${rootProject.create_fabric_version}+mc${rootProject.minecraft_version}")
 }
+
+sourceSets {
+    main {
+        // Platform specific generated files
+        resources {
+            srcDirs += [
+                    'src/main/generated'
+            ]
+            exclude ".cache/**"
+            exclude "**/.fabric"
+            exclude "**/.forge"
+
+        }
+    }
+}

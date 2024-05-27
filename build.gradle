@@ -1,7 +1,32 @@
 plugins {
-    id 'dev.architectury.loom' version '1.5-SNAPSHOT' apply false
+    id 'dev.architectury.loom' version '1.6-SNAPSHOT' apply false
     id 'architectury-plugin' version '3.4-SNAPSHOT'
     id 'com.github.johnrengelman.shadow' version '8.1.1' apply false
+}
+
+tasks.register("multiplatformDatagen") {
+    Project common = project(":common")
+    Project fabric = project(":fabric")
+    Project forge = project(":forge")
+    dependsOn project(":fabric").tasks.named("runDatagen")
+    // Copy the fabric only recipes to the generated resources
+    File fabricDir = fabric.file("src/main/generated/data/doaddonfluids/recipes/")
+    File forgeDir = forge.file("src/main/generated/data/doaddonfluids/recipes/")
+
+    delete(fabricDir)
+    delete(forgeDir)
+
+    copy {
+        from common.file("src/main/generated/data/doaddonfluids/recipes/.fabric")
+        include "**/*.json"
+        into fabric.file("src/main/generated/data/doaddonfluids/recipes/")
+    }
+    // Copy the forge only recipes to the generated resources
+    copy {
+        from common.file("src/main/generated/data/doaddonfluids/recipes/.forge")
+        include "**/*.json"
+        into forge.file("src/main/generated/data/doaddonfluids/recipes/")
+    }
 }
 
 architectury {
@@ -54,9 +79,10 @@ subprojects {
 
         modApi("com.teamresourceful.resourcefullib:resourcefullib-${project.name}-${rootProject.minecraft_version}:${rootProject.resourcefullib_version}")
         modApi("earth.terrarium.botarium:botarium-${project.name}-${rootProject.minecraft_version}:${rootProject.botarium_version}")
-        modImplementation("maven.modrinth:lets-do-meadow:${rootProject.meadow_version}")
-        modImplementation("maven.modrinth:lets-do-vinery:${rootProject.vinery_version}")
-        modImplementation("maven.modrinth:lets-do-brewery:${rootProject.brewery_version}")
+        modCompileOnly("maven.modrinth:lets-do-meadow:${rootProject.meadow_version}")
+        modCompileOnly("maven.modrinth:lets-do-vinery:${rootProject.vinery_version}")
+        modCompileOnly("maven.modrinth:lets-do-brewery:${rootProject.brewery_version}")
+        modCompileOnly("maven.modrinth:do-api:${rootProject.doapi_version}-fabric")
     }
 
     java {

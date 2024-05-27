@@ -32,9 +32,9 @@ public class DoAddonItems {
         return MEADOW_BUCKETS;
     }*/
 
-    public static Item.Properties meadowBucketProperties() {
+    /*public static Item.Properties meadowBucketProperties() {
         return new Item.Properties().craftRemainder(ObjectRegistry.WOODEN_BUCKET.get()).stacksTo(1);
-    }
+    }*/
     public static Item.Properties bucketProperties() {
         return new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1);
     }

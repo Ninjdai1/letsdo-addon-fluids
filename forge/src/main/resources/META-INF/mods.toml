@@ -1,6 +1,6 @@
 modLoader = "javafml"
 loaderVersion = "[47,)"
-#issueTrackerURL = ""
+issueTrackerURL = "https://github.com/Ninjdai1/letsdo-addon-fluids/issues"
 license = "GPLv3"
 
 [[mods]]
@@ -11,7 +11,7 @@ authors = "Ninjdai"
 description = '''
 Add fluids to the Let's Do series for even more modded usage !
 '''
-#logoFile = ""
+logoFile = "assets/doaddonfluids/icon.png"
 
 [[dependencies.doaddonfluids]]
 modId = "forge"
@@ -35,6 +35,21 @@ ordering = "AFTER"
 side = "BOTH"
 
 [[dependencies.doaddonfluids]]
+modId = "botarium"
+mandatory = true
+versionRange = "[2.3.3,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.doaddonfluids]]
+modId = "resourcefullib"
+mandatory = true
+versionRange = "[2.1.25,)"
+ordering = "AFTER"
+side = "BOTH"
+
+
+[[dependencies.doaddonfluids]]
 modId = "meadow"
 mandatory = false
 versionRange = "[1.3.8,)"
@@ -44,6 +59,13 @@ side = "BOTH"
 [[dependencies.doaddonfluids]]
 modId = "vinery"
 mandatory = false
-versionRange = "[1.3.8,)"
+versionRange = "[1.4.19,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.doaddonfluids]]
+modId = "brewery"
+mandatory = false
+versionRange = "[1.1.8,)"
 ordering = "AFTER"
 side = "BOTH"
