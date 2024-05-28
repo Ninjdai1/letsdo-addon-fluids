@@ -1,0 +1,19 @@
+{
+  "color": "#372322",
+  "containers": [
+    {
+      "filled": [
+        "herbalbrews:coffee"
+      ],
+      "empty": "minecraft:glass_bottle",
+      "capacity": "BOTTLE"
+    }
+  ],
+  "flowing_texture": "moonlight:block/soft_fluids/potion_flow",
+  "food": {
+    "divider": "BOTTLE",
+    "item": "herbalbrews:coffee"
+  },
+  "from_mod": "doaddonfluids",
+  "still_texture": "moonlight:block/soft_fluids/soup_liquid"
+}

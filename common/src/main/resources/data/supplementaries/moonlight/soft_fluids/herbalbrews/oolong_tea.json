@@ -1,0 +1,19 @@
+{
+  "color": "#c76918",
+  "containers": [
+    {
+      "filled": [
+        "herbalbrews:oolong_tea"
+      ],
+      "empty": "minecraft:glass_bottle",
+      "capacity": "BOTTLE"
+    }
+  ],
+  "flowing_texture": "moonlight:block/soft_fluids/potion_flow",
+  "food": {
+    "divider": "BOTTLE",
+    "item": "herbalbrews:oolong_tea"
+  },
+  "from_mod": "doaddonfluids",
+  "still_texture": "moonlight:block/soft_fluids/soup_liquid"
+}
