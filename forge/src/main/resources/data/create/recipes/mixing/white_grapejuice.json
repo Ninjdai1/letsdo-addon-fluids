@@ -1,0 +1,26 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "item": "vinery:white_grape",
+            "count": 3
+        }
+    ],
+    "results": [
+        {
+            "fluid": "doaddonfluids:white_grapejuice",
+            "nbt": {},
+            "amount": 250
+        }
+    ],
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "vinery"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        }
+    ]
+}

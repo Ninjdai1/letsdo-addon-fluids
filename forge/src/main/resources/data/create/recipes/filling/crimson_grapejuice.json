@@ -1,0 +1,29 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "item": "vinery:wine_bottle"
+        },
+        {
+            "fluid": "doaddonfluids:crimson_grapejuice",
+            "nbt": {},
+            "amount": 250
+        }
+    ],
+    "results": [
+        {
+            "item": "nethervinery:crimson_grapejuice",
+            "itemTag": {}
+        }
+    ],
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "nethervinery"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        }
+    ]
+}

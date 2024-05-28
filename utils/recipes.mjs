@@ -150,8 +150,9 @@ const createMixingRecipe = ({fluidData, mod, loader}) => {
                 count: 3
             },
         ] : fluidData.mixer.ingredients.map((item) => {
-            if(item.amount == "$loader.bottles") item.amount = LOADER_FLUID_QUANTITIES.bottles[loader];
-            return item;
+            const copy = structuredClone(item)
+            if(item.amount == "$loader.bottles") copy.amount = LOADER_FLUID_QUANTITIES.bottles[loader];
+            return copy;
         }),
         results: [
             {

@@ -1,0 +1,31 @@
+{
+    "type": "create:mixing",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "item": "herbalbrews:rooibos_leaf"
+        },
+        {
+            "fluid": "minecraft:water",
+            "nbt": {},
+            "amount": 250
+        }
+    ],
+    "results": [
+        {
+            "fluid": "doaddonfluids:rooibos_tea",
+            "nbt": {},
+            "amount": 250
+        }
+    ],
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "herbalbrews"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        }
+    ]
+}

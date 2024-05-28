@@ -1,0 +1,34 @@
+{
+    "type": "create:mixing",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "item": "herbalbrews:lavender_blossom"
+        },
+        {
+            "item": "minecraft:sugar"
+        },
+        {
+            "fluid": "minecraft:water",
+            "nbt": {},
+            "amount": 250
+        }
+    ],
+    "results": [
+        {
+            "fluid": "doaddonfluids:lavender_tea",
+            "nbt": {},
+            "amount": 250
+        }
+    ],
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "herbalbrews"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        }
+    ]
+}

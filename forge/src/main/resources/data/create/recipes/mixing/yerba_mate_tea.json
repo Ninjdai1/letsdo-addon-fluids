@@ -1,0 +1,34 @@
+{
+    "type": "create:mixing",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "item": "herbalbrews:yerba_mate_leaf"
+        },
+        {
+            "item": "minecraft:sugar"
+        },
+        {
+            "fluid": "minecraft:water",
+            "nbt": {},
+            "amount": 250
+        }
+    ],
+    "results": [
+        {
+            "fluid": "doaddonfluids:yerba_mate_tea",
+            "nbt": {},
+            "amount": 250
+        }
+    ],
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "herbalbrews"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        }
+    ]
+}

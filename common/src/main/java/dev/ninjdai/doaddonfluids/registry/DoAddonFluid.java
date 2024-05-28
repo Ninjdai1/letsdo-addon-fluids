@@ -106,4 +106,10 @@ public class DoAddonFluid {
 
     public static final RegistryEntry<Fluid> OOLONG_TEA = FLUIDS.register("oolong_tea", () -> new BotariumSourceFluid(DoAddonFluidProperties.OOLONG_TEA));
     public static final RegistryEntry<Fluid> OOLONG_TEA_FLOWING = FLUIDS.register("flowing_oolong_tea", () -> new BotariumFlowingFluid(DoAddonFluidProperties.OOLONG_TEA));
+
+    public static final RegistryEntry<Fluid> COFFEE = FLUIDS.register("coffee", () -> new BotariumSourceFluid(DoAddonFluidProperties.COFFEE));
+    public static final RegistryEntry<Fluid> COFFEE_FLOWING = FLUIDS.register("flowing_coffee", () -> new BotariumFlowingFluid(DoAddonFluidProperties.COFFEE));
+
+    public static final RegistryEntry<Fluid> MILK_COFFEE = FLUIDS.register("milk_coffee", () -> new BotariumSourceFluid(DoAddonFluidProperties.MILK_COFFEE));
+    public static final RegistryEntry<Fluid> MILK_COFFEE_FLOWING = FLUIDS.register("flowing_milk_coffee", () -> new BotariumFlowingFluid(DoAddonFluidProperties.MILK_COFFEE));
 }

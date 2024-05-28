@@ -1,0 +1,31 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "fluid": "doaddonfluids:coffee",
+            "nbt": {},
+            "amount": 27000
+        },
+        {
+            "fluid": "minecraft:milk",
+            "nbt": {},
+            "amount": 27000
+        }
+    ],
+    "results": [
+        {
+            "fluid": "doaddonfluids:milk_coffee",
+            "nbt": {},
+            "amount": 27000
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "herbalbrews",
+                "create"
+            ]
+        }
+    ]
+}

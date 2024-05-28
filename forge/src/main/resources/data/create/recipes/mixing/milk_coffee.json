@@ -1,0 +1,32 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "fluid": "doaddonfluids:coffee",
+            "nbt": {},
+            "amount": 250
+        },
+        {
+            "fluid": "minecraft:milk",
+            "nbt": {},
+            "amount": 250
+        }
+    ],
+    "results": [
+        {
+            "fluid": "doaddonfluids:milk_coffee",
+            "nbt": {},
+            "amount": 250
+        }
+    ],
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "herbalbrews"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        }
+    ]
+}

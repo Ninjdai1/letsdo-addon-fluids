@@ -50,7 +50,10 @@ public enum DoAddonColors {
     LAVENDER_TEA(65, 33, 108),
     YERBA_MATE_TEA(66, 79, 42),
     ROOIBOS_TEA(251, 68, 46),
-    OOLONG_TEA(199, 105, 24);
+    OOLONG_TEA(199, 105, 24),
+
+    COFFEE(55, 35, 34),
+    MILK_COFFEE(110, 66, 52);
 
     private final Color color;
     public final int value;

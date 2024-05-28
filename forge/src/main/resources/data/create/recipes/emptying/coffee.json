@@ -1,0 +1,29 @@
+{
+    "type": "create:emptying",
+    "ingredients": [
+        {
+            "item": "herbalbrews:coffee",
+            "itemTag": {}
+        }
+    ],
+    "results": [
+        {
+            "item": "minecraft:glass_bottle"
+        },
+        {
+            "fluid": "doaddonfluids:coffee",
+            "nbt": {},
+            "amount": 250
+        }
+    ],
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "herbalbrews"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        }
+    ]
+}

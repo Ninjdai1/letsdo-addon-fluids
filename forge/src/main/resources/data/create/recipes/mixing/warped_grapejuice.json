@@ -1,0 +1,26 @@
+{
+    "type": "create:mixing",
+    "ingredients": [
+        {
+            "item": "nethervinery:warped_grape",
+            "count": 3
+        }
+    ],
+    "results": [
+        {
+            "fluid": "doaddonfluids:warped_grapejuice",
+            "nbt": {},
+            "amount": 250
+        }
+    ],
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "nethervinery"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        }
+    ]
+}
