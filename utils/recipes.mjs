@@ -47,6 +47,13 @@ const brews = {
             ingredients: [{item: "herbalbrews:dried_oolong_tea"}, {fluid: "minecraft:water", nbt:{}, amount: "$loader.bottles"}],
             heatRequirement: "heated"
         }},
+        { empty_bottle: "minecraft:glass_bottle", filled_bottle: "coffee", fluid: "coffee", mixer: {
+            ingredients: [{item: "herbalbrews:coffee_beans"}, {fluid: "minecraft:water", nbt:{}, amount: "$loader.bottles"}],
+            heatRequirement: "heated"
+        }},
+        { empty_bottle: "minecraft:glass_bottle", filled_bottle: "milk_coffee", fluid: "milk_coffee", mixer: {
+            ingredients: [{fluid: "doaddonfluids:coffee", nbt:{}, amount: "$loader.bottles"}, {fluid: "minecraft:milk", nbt:{}, amount: "$loader.bottles"}]
+        }},
     ],
     /*brewery: [
         { empty_bottle: "brewery:beer_mug", filled_bottle: "beer_wheat", fluid: "beer_wheat"},
