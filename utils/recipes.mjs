@@ -18,6 +18,36 @@ const brews = {
         { empty_bottle: "vinery:wine_bottle", filled_bottle: "crimson_grapejuice", fluid: "crimson_grapejuice", press: "nethervinery:crimson_grape"},
         { empty_bottle: "vinery:wine_bottle", filled_bottle: "warped_grapejuice", fluid: "warped_grapejuice", press: "nethervinery:warped_grape"},
     ],
+    herbalbrews: [
+        { empty_bottle: "minecraft:glass_bottle", filled_bottle: "green_tea", fluid: "green_tea", mixer: {
+            ingredients: [{item: "herbalbrews:dried_green_tea"}, {fluid: "minecraft:water", nbt:{}, amount: "$loader.bottles"}],
+            heatRequirement: "heated"
+        }},
+        { empty_bottle: "minecraft:glass_bottle", filled_bottle: "black_tea", fluid: "black_tea", mixer: {
+            ingredients: [{item: "herbalbrews:dried_black_tea"}, {item: "minecraft:sugar"}, {fluid: "minecraft:water", nbt:{}, amount: "$loader.bottles"}],
+            heatRequirement: "heated"
+        }},
+        { empty_bottle: "minecraft:glass_bottle", filled_bottle: "hibiscus_tea", fluid: "hibiscus_tea", mixer: {
+            ingredients: [{item: "herbalbrews:hibiscus"}, {item: "minecraft:sugar"}, {fluid: "minecraft:water", nbt:{}, amount: "$loader.bottles"}],
+            heatRequirement: "heated"
+        }},
+        { empty_bottle: "minecraft:glass_bottle", filled_bottle: "lavender_tea", fluid: "lavender_tea", mixer: {
+            ingredients: [{item: "herbalbrews:lavender_blossom"}, {item: "minecraft:sugar"}, {fluid: "minecraft:water", nbt:{}, amount: "$loader.bottles"}],
+            heatRequirement: "heated"
+        }},
+        { empty_bottle: "minecraft:glass_bottle", filled_bottle: "yerba_mate_tea", fluid: "yerba_mate_tea", mixer: {
+            ingredients: [{item: "herbalbrews:yerba_mate_leaf"}, {item: "minecraft:sugar"}, {fluid: "minecraft:water", nbt:{}, amount: "$loader.bottles"}],
+            heatRequirement: "heated"
+        }},
+        { empty_bottle: "minecraft:glass_bottle", filled_bottle: "rooibos_tea", fluid: "rooibos_tea", mixer: {
+            ingredients: [{item: "herbalbrews:rooibos_leaf"}, {fluid: "minecraft:water", nbt:{}, amount: "$loader.bottles"}],
+            heatRequirement: "heated"
+        }},
+        { empty_bottle: "minecraft:glass_bottle", filled_bottle: "oolong_tea", fluid: "oolong_tea", mixer: {
+            ingredients: [{item: "herbalbrews:dried_oolong_tea"}, {fluid: "minecraft:water", nbt:{}, amount: "$loader.bottles"}],
+            heatRequirement: "heated"
+        }},
+    ],
     /*brewery: [
         { empty_bottle: "brewery:beer_mug", filled_bottle: "beer_wheat", fluid: "beer_wheat"},
         { empty_bottle: "brewery:beer_mug", filled_bottle: "beer_barley", fluid: "beer_barley"},
@@ -106,12 +136,16 @@ const createFillingRecipe = ({fluidData, mod, loader, customNBT={}}) => {
 const createMixingRecipe = ({fluidData, mod, loader}) => {
     const recipe = {
         type: "create:mixing",
-        ingredients: [
+        heatRequirement: fluidData.mixer?.heatRequirement,
+        ingredients: fluidData.press ? [
             {
                 item: fluidData.press,
                 count: 3
             },
-        ],
+        ] : fluidData.mixer.ingredients.map((item) => {
+            if(item.amount == "$loader.bottles") item.amount = LOADER_FLUID_QUANTITIES.bottles[loader];
+            return item;
+        }),
         results: [
             {
                 fluid: `${MOD_ID}:${fluidData.fluid}`,
@@ -164,6 +198,18 @@ function brewRecipes({brew, mod, loader, customNBT, customIndex}){
         loader: loader, targetMod: "create", targetType: "emptying", item: brew.filled_bottle,
         customIndex: customIndex
     });
+    if(brew.mixer){
+        writeRecipe({
+            recipe: createMixingRecipe({
+                fluidData: brew,
+                mod: mod,
+                loader: loader,
+                customNBT: customNBT,
+            }),
+            loader: loader, targetMod: "create", targetType: "mixing", item: brew.fluid,
+            customIndex: customIndex
+        });
+    }
     if(brew.press){
         writeRecipe({
             recipe: createMixingRecipe({

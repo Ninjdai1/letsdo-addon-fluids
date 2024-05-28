@@ -24,6 +24,14 @@ public class DoAddonTranslations extends FabricLanguageProvider{
             tb.add(key + "." + DoAddonFluid.TAIGA_WHITE_GRAPEJUICE.getId().toLanguageKey(), "White Taiga Grapejuice");
             tb.add(key + "." + DoAddonFluid.CRIMSON_GRAPEJUICE.getId().toLanguageKey(), "Crimson Grapejuice");
             tb.add(key + "." + DoAddonFluid.WARPED_GRAPEJUICE.getId().toLanguageKey(), "Warped Grapejuice");
+
+            tb.add(key + "." + DoAddonFluid.GREEN_TEA.getId().toLanguageKey(), "Green Tea");
+            tb.add(key + "." + DoAddonFluid.BLACK_TEA.getId().toLanguageKey(), "Black Tea");
+            tb.add(key + "." + DoAddonFluid.HIBISCUS_TEA.getId().toLanguageKey(), "Hibiscus Tea");
+            tb.add(key + "." + DoAddonFluid.LAVENDER_TEA.getId().toLanguageKey(), "Lavender Tea");
+            tb.add(key + "." + DoAddonFluid.YERBA_MATE_TEA.getId().toLanguageKey(), "Yerba Mate Tea");
+            tb.add(key + "." + DoAddonFluid.ROOIBOS_TEA.getId().toLanguageKey(), "Rooibos Tea");
+            tb.add(key + "." + DoAddonFluid.OOLONG_TEA.getId().toLanguageKey(), "Oolong Tea");
         }
     }
 }

@@ -1,0 +1,28 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "item": "minecraft:glass_bottle"
+        },
+        {
+            "fluid": "doaddonfluids:yerba_mate_tea",
+            "nbt": {},
+            "amount": 27000
+        }
+    ],
+    "results": [
+        {
+            "item": "herbalbrews:yerba_mate_tea",
+            "itemTag": {}
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "herbalbrews",
+                "create"
+            ]
+        }
+    ]
+}

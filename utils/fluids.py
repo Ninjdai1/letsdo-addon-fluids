@@ -12,7 +12,7 @@ while True:
             .still(new ResourceLocation("minecraft", "block/water_still"))
             .flowing(new ResourceLocation("minecraft", "block/water_flow"))
             .overlay(new ResourceLocation("minecraft", "block/water_flow"))
-            .screenOverlay(new ResourceLocation("textures/misc/underwater.png"))
+            .screenOverlay(new ResourceLocation("minecraft", "textures/misc/underwater.png"))
             .tintColor(DoAddonColors.{fluid['id'].upper()}.value)
             .canConvertToSource(false)
             .canDrown(true)

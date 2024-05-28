@@ -41,7 +41,16 @@ public enum DoAddonColors {
     GOAT_MILK(236, 218, 201),
     AMETHYST_MILK(210, 134, 206),
     BUFFALO_MILK(243, 230, 229),
-    YEAST(232, 212, 171);
+    YEAST(232, 212, 171),
+
+    //HERBALBREWS
+    GREEN_TEA(165, 214, 35),
+    BLACK_TEA(62, 10, 18),
+    HIBISCUS_TEA(162, 24, 38),
+    LAVENDER_TEA(65, 33, 108),
+    YERBA_MATE_TEA(66, 79, 42),
+    ROOIBOS_TEA(251, 68, 46),
+    OOLONG_TEA(199, 105, 24);
 
     private final Color color;
     public final int value;

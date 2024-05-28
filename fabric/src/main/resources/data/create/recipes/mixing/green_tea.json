@@ -1,0 +1,30 @@
+{
+    "type": "create:mixing",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "item": "herbalbrews:dried_green_tea"
+        },
+        {
+            "fluid": "minecraft:water",
+            "nbt": {},
+            "amount": 27000
+        }
+    ],
+    "results": [
+        {
+            "fluid": "doaddonfluids:green_tea",
+            "nbt": {},
+            "amount": 27000
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "herbalbrews",
+                "create"
+            ]
+        }
+    ]
+}

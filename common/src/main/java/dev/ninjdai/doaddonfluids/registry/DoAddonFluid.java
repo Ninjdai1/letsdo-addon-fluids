@@ -84,4 +84,26 @@ public class DoAddonFluid {
 
     public static final RegistryEntry<Fluid> WARPED_MILK = FLUIDS.register("warped_milk", () -> new BotariumSourceFluid(DoAddonFluidProperties.WARPED_MILK));
     public static final RegistryEntry<Fluid> WARPED_MILK_FLOWING = FLUIDS.register("flowing_warped_milk", () -> new BotariumFlowingFluid(DoAddonFluidProperties.WARPED_MILK));
+
+    //HERBALBREWS
+    public static final RegistryEntry<Fluid> GREEN_TEA = FLUIDS.register("green_tea", () -> new BotariumSourceFluid(DoAddonFluidProperties.GREEN_TEA));
+    public static final RegistryEntry<Fluid> GREEN_TEA_FLOWING = FLUIDS.register("flowing_green_tea", () -> new BotariumFlowingFluid(DoAddonFluidProperties.GREEN_TEA));
+
+    public static final RegistryEntry<Fluid> BLACK_TEA = FLUIDS.register("black_tea", () -> new BotariumSourceFluid(DoAddonFluidProperties.BLACK_TEA));
+    public static final RegistryEntry<Fluid> BLACK_TEA_FLOWING = FLUIDS.register("flowing_black_tea", () -> new BotariumFlowingFluid(DoAddonFluidProperties.BLACK_TEA));
+
+    public static final RegistryEntry<Fluid> HIBISCUS_TEA = FLUIDS.register("hibiscus_tea", () -> new BotariumSourceFluid(DoAddonFluidProperties.HIBISCUS_TEA));
+    public static final RegistryEntry<Fluid> HIBISCUS_TEA_FLOWING = FLUIDS.register("flowing_hibiscus_tea", () -> new BotariumFlowingFluid(DoAddonFluidProperties.HIBISCUS_TEA));
+
+    public static final RegistryEntry<Fluid> LAVENDER_TEA = FLUIDS.register("lavender_tea", () -> new BotariumSourceFluid(DoAddonFluidProperties.LAVENDER_TEA));
+    public static final RegistryEntry<Fluid> LAVENDER_TEA_FLOWING = FLUIDS.register("flowing_lavender_tea", () -> new BotariumFlowingFluid(DoAddonFluidProperties.LAVENDER_TEA));
+
+    public static final RegistryEntry<Fluid> YERBA_MATE_TEA = FLUIDS.register("yerba_mate_tea", () -> new BotariumSourceFluid(DoAddonFluidProperties.YERBA_MATE_TEA));
+    public static final RegistryEntry<Fluid> YERBA_MATE_TEA_FLOWING = FLUIDS.register("flowing_yerba_mate_tea", () -> new BotariumFlowingFluid(DoAddonFluidProperties.YERBA_MATE_TEA));
+
+    public static final RegistryEntry<Fluid> ROOIBOS_TEA = FLUIDS.register("rooibos_tea", () -> new BotariumSourceFluid(DoAddonFluidProperties.ROOIBOS_TEA));
+    public static final RegistryEntry<Fluid> ROOIBOS_TEA_FLOWING = FLUIDS.register("flowing_rooibos_tea", () -> new BotariumFlowingFluid(DoAddonFluidProperties.ROOIBOS_TEA));
+
+    public static final RegistryEntry<Fluid> OOLONG_TEA = FLUIDS.register("oolong_tea", () -> new BotariumSourceFluid(DoAddonFluidProperties.OOLONG_TEA));
+    public static final RegistryEntry<Fluid> OOLONG_TEA_FLOWING = FLUIDS.register("flowing_oolong_tea", () -> new BotariumFlowingFluid(DoAddonFluidProperties.OOLONG_TEA));
 }
