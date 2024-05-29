@@ -53,7 +53,11 @@ public enum DoAddonColors {
     OOLONG_TEA(199, 105, 24),
 
     COFFEE(55, 35, 34),
-    MILK_COFFEE(110, 66, 52);
+    MILK_COFFEE(110, 66, 52),
+
+    //BAKERY
+    STRAWBERRY_JAM(210, 59, 59),
+    ;
 
     private final Color color;
     public final int value;

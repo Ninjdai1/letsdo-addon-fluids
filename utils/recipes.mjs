@@ -55,6 +55,24 @@ const brews = {
             ingredients: [{fluid: "doaddonfluids:coffee", nbt:{}, amount: "$loader.bottles"}, {fluid: "minecraft:milk", nbt:{}, amount: "$loader.bottles"}]
         }},
     ],
+    bakery: [
+        { empty_bottle: "bakery:jar", filled_bottle: "strawberry_jam", fluid: "strawberry_jam", mixer: {
+            ingredients: [{tag: "$loader$:fruits/strawberries"}, {item: "minecraft:sugar"}],
+            heatRequirement: "heated"
+        }},
+        { empty_bottle: "bakery:jar", filled_bottle: "glowberry_jam", fluid: "glowberry_jam", mixer: {
+            ingredients: [{item: "minecraft:glow_berries"}, {item: "minecraft:sugar"}],
+            heatRequirement: "heated"
+        }},
+        { empty_bottle: "bakery:jar", filled_bottle: "sweetberry_jam", fluid: "sweetberry_jam", mixer: {
+            ingredients: [{item: "minecraft:sweet_berries"}, {item: "minecraft:sugar"}],
+            heatRequirement: "heated"
+        }},
+        { empty_bottle: "bakery:jar", filled_bottle: "apple_jam", fluid: "apple_jam", mixer: {
+            ingredients: [{item: "minecraft:apple"}, {item: "minecraft:sugar"}],
+            heatRequirement: "heated"
+        }},
+    ],
     /*brewery: [
         { empty_bottle: "brewery:beer_mug", filled_bottle: "beer_wheat", fluid: "beer_wheat"},
         { empty_bottle: "brewery:beer_mug", filled_bottle: "beer_barley", fluid: "beer_barley"},
@@ -151,6 +169,7 @@ const createMixingRecipe = ({fluidData, mod, loader}) => {
             },
         ] : fluidData.mixer.ingredients.map((item) => {
             const copy = structuredClone(item)
+            if(item.tag && item.tag.includes("$loader$")) copy.tag = item.tag.replaceAll("$loader$", loader=="fabric" ? "c":"forge");
             if(item.amount == "$loader.bottles") copy.amount = LOADER_FLUID_QUANTITIES.bottles[loader];
             return copy;
         }),

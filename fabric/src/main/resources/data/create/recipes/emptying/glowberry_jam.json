@@ -1,0 +1,28 @@
+{
+    "type": "create:emptying",
+    "ingredients": [
+        {
+            "item": "bakery:glowberry_jam",
+            "itemTag": {}
+        }
+    ],
+    "results": [
+        {
+            "item": "bakery:jar"
+        },
+        {
+            "fluid": "doaddonfluids:glowberry_jam",
+            "nbt": {},
+            "amount": 27000
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "bakery",
+                "create"
+            ]
+        }
+    ]
+}

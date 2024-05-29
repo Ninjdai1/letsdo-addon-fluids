@@ -112,4 +112,17 @@ public class DoAddonFluid {
 
     public static final RegistryEntry<Fluid> MILK_COFFEE = FLUIDS.register("milk_coffee", () -> new BotariumSourceFluid(DoAddonFluidProperties.MILK_COFFEE));
     public static final RegistryEntry<Fluid> MILK_COFFEE_FLOWING = FLUIDS.register("flowing_milk_coffee", () -> new BotariumFlowingFluid(DoAddonFluidProperties.MILK_COFFEE));
+
+    //BAKERY
+    public static final RegistryEntry<Fluid> STRAWBERRY_JAM = FLUIDS.register("strawberry_jam", () -> new BotariumSourceFluid(DoAddonFluidProperties.STRAWBERRY_JAM));
+    public static final RegistryEntry<Fluid> STRAWBERRY_JAM_FLOWING = FLUIDS.register("flowing_strawberry_jam", () -> new BotariumFlowingFluid(DoAddonFluidProperties.STRAWBERRY_JAM));
+
+    public static final RegistryEntry<Fluid> GLOWBERRY_JAM = FLUIDS.register("glowberry_jam", () -> new BotariumSourceFluid(DoAddonFluidProperties.GLOWBERRY_JAM));
+    public static final RegistryEntry<Fluid> GLOWBERRY_JAM_FLOWING = FLUIDS.register("flowing_glowberry_jam", () -> new BotariumFlowingFluid(DoAddonFluidProperties.GLOWBERRY_JAM));
+
+    public static final RegistryEntry<Fluid> SWEETBERRY_JAM = FLUIDS.register("sweetberry_jam", () -> new BotariumSourceFluid(DoAddonFluidProperties.SWEETBERRY_JAM));
+    public static final RegistryEntry<Fluid> SWEETBERRY_JAM_FLOWING = FLUIDS.register("flowing_sweetberry_jam", () -> new BotariumFlowingFluid(DoAddonFluidProperties.SWEETBERRY_JAM));
+
+    public static final RegistryEntry<Fluid> APPLE_JAM = FLUIDS.register("apple_jam", () -> new BotariumSourceFluid(DoAddonFluidProperties.APPLE_JAM));
+    public static final RegistryEntry<Fluid> APPLE_JAM_FLOWING = FLUIDS.register("flowing_apple_jam", () -> new BotariumFlowingFluid(DoAddonFluidProperties.APPLE_JAM));
 }

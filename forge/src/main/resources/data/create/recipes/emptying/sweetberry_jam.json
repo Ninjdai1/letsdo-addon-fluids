@@ -1,0 +1,29 @@
+{
+    "type": "create:emptying",
+    "ingredients": [
+        {
+            "item": "bakery:sweetberry_jam",
+            "itemTag": {}
+        }
+    ],
+    "results": [
+        {
+            "item": "bakery:jar"
+        },
+        {
+            "fluid": "doaddonfluids:sweetberry_jam",
+            "nbt": {},
+            "amount": 250
+        }
+    ],
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "bakery"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        }
+    ]
+}
