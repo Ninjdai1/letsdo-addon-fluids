@@ -1,0 +1,99 @@
+{
+    "replace": false,
+    "values": [
+        {
+            "id": "vinery:red_grapejuice_wine_bottle",
+            "required": false
+        },
+        {
+            "id": "vinery:white_grapejuice_wine_bottle",
+            "required": false
+        },
+        {
+            "id": "vinery:jungle_red_grapejuice_bottle",
+            "required": false
+        },
+        {
+            "id": "vinery:jungle_white_grapejuice_bottle",
+            "required": false
+        },
+        {
+            "id": "vinery:savanna_red_grapejuice_bottle",
+            "required": false
+        },
+        {
+            "id": "vinery:savanna_white_grapejuice_bottle",
+            "required": false
+        },
+        {
+            "id": "vinery:taiga_red_grapejuice_bottle",
+            "required": false
+        },
+        {
+            "id": "vinery:taiga_white_grapejuice_bottle",
+            "required": false
+        },
+        {
+            "id": "vinery:wine_bottle",
+            "required": false
+        },
+
+        {
+            "id": "herbalbrews:green_tea",
+            "required": false
+        },
+        {
+            "id": "herbalbrews:black_tea",
+            "required": false
+        },
+        {
+            "id": "herbalbrews:hibiscus_tea",
+            "required": false
+        },
+        {
+            "id": "herbalbrews:lavender_tea",
+            "required": false
+        },
+        {
+            "id": "herbalbrews:yerba_mate_tea",
+            "required": false
+        },
+        {
+            "id": "herbalbrews:rooibos_tea",
+            "required": false
+        },
+        {
+            "id": "herbalbrews:oolong_tea",
+            "required": false
+        },
+        {
+            "id": "herbalbrews:coffee",
+            "required": false
+        },
+        {
+            "id": "herbalbrews:milk_coffee",
+            "required": false
+        },
+
+        {
+            "id": "bakery:strawberry_jam",
+            "required": false
+        },
+        {
+            "id": "bakery:glowberry_jam",
+            "required": false
+        },
+        {
+            "id": "bakery:sweetberry_jam",
+            "required": false
+        },
+        {
+            "id": "bakery:apple_jam",
+            "required": false
+        },
+        {
+            "id": "bakery:jar",
+            "required": false
+        }
+    ]
+}
