@@ -1,0 +1,27 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "tag": "bakery:bread"
+        },
+        {
+            "amount": 250,
+            "fluidTag": "doaddonfluids:jam"
+        }
+    ],
+    "results": [
+        {
+            "item": "bakery:jam_roll"
+        }
+    ],
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "bakery"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        }
+    ]
+}

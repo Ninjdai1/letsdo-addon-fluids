@@ -87,6 +87,28 @@ const brews = {
     ]*/
 }
 
+const filling_recipes = {
+    bakery: [
+        {
+            type: "create:filling",
+            ingredients: [
+                {
+                    tag: "bakery:bread"
+                },
+                {
+                  amount: "$loader.bottles",
+                  fluidTag: "doaddonfluids:jam"
+                }
+            ],
+            results: [
+                {
+                    item: "bakery:jam_roll"
+                }
+            ]
+        }
+    ]
+}
+
 const MOD_ID = "doaddonfluids"
 const LOADER_FLUID_QUANTITIES = {
     bottles: {
@@ -193,6 +215,29 @@ const createMixingRecipe = ({fluidData, mod, loader}) => {
     return recipe;
 }
 
+function withCreateDependencies({recipe, loader, mod}){
+    loader == "fabric" ? 
+        recipe["fabric:load_conditions"] = [{
+            condition: "fabric:all_mods_loaded", values: [`${mod}`, "create"]
+        }]:
+        recipe.conditions = [
+            { type: "forge:mod_loaded", modid: `${mod}` },
+            { type: "forge:mod_loaded", modid: "create" }
+        ]
+    return recipe
+}
+
+function withPerLoaderFilters({recipe, loader}){
+    const recipeCopy = structuredClone(recipe)
+    recipeCopy["ingredients"] = recipe.ingredients.map((ingredient) => {
+        const copy = structuredClone(ingredient)
+        if(ingredient.tag && ingredient.tag.includes("$loader$")) copy.tag = ingredient.tag.replaceAll("$loader$", loader=="fabric" ? "c":"forge");
+        if(ingredient.amount == "$loader.bottles") copy.amount = LOADER_FLUID_QUANTITIES.bottles[loader];
+        return copy;
+    })
+    return recipeCopy;
+}
+
 function writeRecipe({recipe, loader, targetMod, targetType, item, customIndex}) {
     if(!recipe) return;
     const dir = `../${loader}/src/main/resources/data/${targetMod}/recipes/${targetType}`;
@@ -280,6 +325,18 @@ for(const loader of ["fabric", "forge"]){
                     loader: loader,
                 })
             }
+        }
+    }
+
+    for(const mod of Object.keys(filling_recipes)){
+        for(const recipe of filling_recipes[mod]){
+            writeRecipe({
+                recipe: withCreateDependencies({recipe: withPerLoaderFilters({recipe: recipe, loader: loader}), loader: loader, mod: mod}),
+                loader: loader,
+                targetMod: "create",
+                targetType: "filling",
+                item: recipe.results[0].item.split(":")[1]
+            })
         }
     }
 }
