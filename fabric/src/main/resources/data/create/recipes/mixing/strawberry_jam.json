@@ -3,7 +3,7 @@
     "heatRequirement": "heated",
     "ingredients": [
         {
-            "tag": "c:fruits/strawberries"
+            "tag": "c:strawberries"
         },
         {
             "item": "minecraft:sugar"

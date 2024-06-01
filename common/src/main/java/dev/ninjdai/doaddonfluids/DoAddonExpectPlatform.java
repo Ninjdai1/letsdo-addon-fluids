@@ -7,6 +7,6 @@ public class DoAddonExpectPlatform {
 
     @ExpectPlatform
     public static boolean isModLoaded(String modid) {
-        throw new AssertionError();
+        return false;
     }
 }

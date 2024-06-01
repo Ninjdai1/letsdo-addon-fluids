@@ -18,13 +18,11 @@ public final class DoAddonFluids {
     }
 
     public static void init() {
+        DoAddonFluid.registerModDependentFluids();
         DoAddonFluid.FLUIDS.init();
+        DoAddonBlocks.registerModDependentBlocks();
         DoAddonBlocks.BLOCKS.init();
         DoAddonItems.ITEMS.init();
-        /*if(DoAddonExpectPlatform.isModLoaded("meadow")) {
-            DoAddonItems.registerMeadowBuckets().init();
-        }*/
-
         DoAddonFluidProperties.FLUID_PROPERTIES.initialize();
 
         LOGGER.info("[Let's Do Addon] Fluids initialized !");

@@ -57,7 +57,7 @@ const brews = {
     ],
     bakery: [
         { empty_bottle: "bakery:jar", filled_bottle: "strawberry_jam", fluid: "strawberry_jam", mixer: {
-            ingredients: [{tag: "$loader$:fruits/strawberries"}, {item: "minecraft:sugar"}],
+            ingredients: [{tag: "$loader$:strawberries"}, {item: "minecraft:sugar"}],
             heatRequirement: "heated"
         }},
         { empty_bottle: "bakery:jar", filled_bottle: "glowberry_jam", fluid: "glowberry_jam", mixer: {
