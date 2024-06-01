@@ -2,6 +2,7 @@ plugins {
     id 'dev.architectury.loom' version '1.6-SNAPSHOT' apply false
     id 'architectury-plugin' version '3.4-SNAPSHOT'
     id 'com.github.johnrengelman.shadow' version '8.1.1' apply false
+    id "me.modmuss50.mod-publish-plugin" version "0.5.1"
 }
 
 tasks.register("multiplatformDatagen") {
@@ -114,6 +115,114 @@ subprojects {
             // Notice: This block does NOT have the same function as the block in the top level.
             // The repositories here will be used for publishing your artifact, not for
             // retrieving dependencies.
+        }
+    }
+}
+
+
+publishMods {
+    changelog = file("CHANGELOG.md").text.replace("@VERSION@", rootProject.mod_version)
+    type = STABLE
+
+    def optionsCurseforge = curseforgeOptions {
+        accessToken = providers.environmentVariable("CURSEFORGE_API_KEY")
+        minecraftVersions.add("1.20.1")
+        projectId = "1025920"
+        requires {
+            slug = "botarium"
+        }
+        requires {
+            slug = "resourceful-lib"
+        }
+        optional {
+            slug = "lets-do-bakery"
+        }
+        optional {
+            slug = "lets-do-herbal-brews"
+        }
+        optional {
+            slug = "lets-do-vinery"
+        }
+        optional {
+            slug = "lets-do-nethervinery"
+        }
+        optional {
+            slug = "lets-do-meadow"
+        }
+    }
+
+    def optionsModrinth = modrinthOptions {
+        accessToken = providers.environmentVariable("MODRINTH_API_KEY")
+        projectId = "PGVF51co"
+        minecraftVersions.add("1.20.1")
+        requires {
+            slug = "botarium"
+        }
+        requires {
+            slug = "resourceful-lib"
+        }
+        optional {
+            slug = "lets-do-bakery"
+        }
+        optional {
+            slug = "lets-do-herbalbrews"
+        }
+        optional {
+            slug = "lets-do-vinery"
+        }
+        optional {
+            slug = "lets-do-nethervinery"
+        }
+        optional {
+            slug = "lets-do-meadow"
+        }
+    }
+
+    curseforge("curseforgeFabric") {
+        from optionsCurseforge
+        modLoaders.add("fabric")
+        modLoaders.add("quilt")
+        file = project(":fabric").tasks.named("remapJar").get().archiveFile
+        displayName = "[Let's Do Addon] Fluids ${rootProject.mod_version} Fabric"
+        version = "${rootProject.mod_version}-fabric"
+        optional {
+            slug = "create-fabric"
+        }
+    }
+
+    curseforge("curseforgeForge") {
+        from optionsCurseforge
+        modLoaders.add("forge")
+        modLoaders.add("neoforge")
+        file = project(":forge").tasks.named("remapJar").get().archiveFile
+        displayName = "[Let's Do Addon] Fluids ${rootProject.mod_version} Forge"
+        version = "${rootProject.mod_version}-forge"
+        optional {
+            slug = "create"
+        }
+    }
+
+    modrinth("modrinthFabric") {
+        from optionsModrinth
+        modLoaders.add("fabric")
+        modLoaders.add("quilt")
+        file = project(":fabric").tasks.named("remapJar").get().archiveFile
+        displayName = "[Let's Do Addon] Fluids ${rootProject.mod_version} Fabric"
+        version = "${rootProject.mod_version}-fabric"
+        optional {
+            slug = "create-fabric"
+        }
+    }
+
+    modrinth("modrinthForge") {
+        from optionsModrinth
+        modLoaders.add("forge")
+        modLoaders.add("neoforge")
+        file = project(":forge").tasks.named("remapJar").get().archiveFile
+        displayName = "[Let's Do Addon] Fluids ${rootProject.mod_version} Forge"
+        version = "${rootProject.mod_version}-forge"
+        optional {
+            slug = "create"
         }
     }
 }
