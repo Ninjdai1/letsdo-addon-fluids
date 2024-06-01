@@ -73,6 +73,21 @@ const brews = {
             heatRequirement: "heated"
         }},
     ],
+    meadow: [
+        { empty_bottle: "meadow:wooden_bucket", filled_bottle: "wooden_buffalo_milk_bucket", amount: "$loader.buckets", fluid: "buffalo_milk"},
+        { empty_bottle: "meadow:wooden_bucket", filled_bottle: "wooden_amethyst_milk_bucket", amount: "$loader.buckets", fluid: "amethyst_milk", mixer: {
+            ingredients: [{item: "minecraft:amethyst_cluster"}, {item: "meadow:alpine_salt"}, {fluid: "minecraft:milk", nbt:{}, amount: "$loader.buckets"}],
+            heatRequirement: "heated"
+        }},
+        { empty_bottle: "meadow:wooden_bucket", filled_bottle: "wooden_goat_milk_bucket", amount: "$loader.buckets", fluid: "goat_milk"},
+        { empty_bottle: "meadow:wooden_bucket", filled_bottle: "wooden_grain_milk_bucket", amount: "$loader.buckets", fluid: "grain_milk"},
+        { empty_bottle: "meadow:wooden_bucket", filled_bottle: "wooden_sheep_milk_bucket", amount: "$loader.buckets", fluid: "sheep_milk"},
+        { empty_bottle: "meadow:wooden_bucket", filled_bottle: "wooden_warped_milk_bucket", amount: "$loader.buckets", fluid: "warped_milk"},
+        { empty_bottle: "minecraft:glass_bottle", filled_bottle: "rennet", amount: "$loader.bottles", fluid: "rennet", mixer: {
+            ingredients: [{item: "minecraft:egg"}, {item: "meadow:alpine_salt"}],
+            heatRequirement: "heated"
+        }},
+    ],
     /*brewery: [
         { empty_bottle: "brewery:beer_mug", filled_bottle: "beer_wheat", fluid: "beer_wheat"},
         { empty_bottle: "brewery:beer_mug", filled_bottle: "beer_barley", fluid: "beer_barley"},
@@ -109,15 +124,78 @@ const filling_recipes = {
     ]
 }
 
+const compacting_recipes = {
+    meadow: [
+        {
+            type: "create:compacting",
+            ingredients: [
+                {
+                    amount: "$loader.bottles",
+                    nbt: {},
+                    fluid: "doaddonfluids:rennet"
+                },
+                {
+                    amount: "$loader.bottles",
+                    nbt: {},
+                    fluid: `minecraft:milk`
+                }
+            ],
+            results: [
+                {
+                    item: `meadow:cheese_block`
+                }
+            ]
+        }
+    ]
+}
+for(const cheese_type of ["buffalo", "amethyst", "goat", "grain", "sheep", "warped"]){
+    compacting_recipes.meadow.push({
+        type: "create:compacting",
+        ingredients: [
+            {
+                amount: "$loader.bottles",
+                nbt: {},
+                fluid: "doaddonfluids:rennet"
+            },
+            {
+                amount: "$loader.bottles",
+                nbt: {},
+                fluid: `doaddonfluids:${cheese_type}_milk`
+            }
+        ],
+        results: [
+            {
+                item: `meadow:${cheese_type}_cheese_block`
+            }
+        ]
+    })
+}
+
 const MOD_ID = "doaddonfluids"
 const LOADER_FLUID_QUANTITIES = {
     bottles: {
         forge: 250,
         fabric: 27000,
+    },
+    buckets: {
+        forge: 1000,
+        fabric: 81000,
+    }
+}
+
+const amountStringToInt = (loader, amountString) => {
+    switch (amountString) {
+        case "$loader.bottles":
+            return LOADER_FLUID_QUANTITIES.bottles[loader];
+        case "$loader.buckets":
+            return LOADER_FLUID_QUANTITIES.buckets[loader];
+        default:
+            return LOADER_FLUID_QUANTITIES.bottles[loader];
     }
 }
 
 const createEmptyingRecipe = ({fluidData, mod, loader, customNBT={}}) => {
+    const fluidAmount = amountStringToInt(loader, fluidData.amount);
     const recipe = {
         type: "create:emptying",
         ingredients: [
@@ -133,7 +211,7 @@ const createEmptyingRecipe = ({fluidData, mod, loader, customNBT={}}) => {
             {
                 fluid: `${MOD_ID}:${fluidData.fluid}`,
                 nbt: customNBT,
-                amount: LOADER_FLUID_QUANTITIES.bottles[loader]
+                amount: fluidAmount,
             }
         ],
     }
@@ -149,6 +227,7 @@ const createEmptyingRecipe = ({fluidData, mod, loader, customNBT={}}) => {
 }
 
 const createFillingRecipe = ({fluidData, mod, loader, customNBT={}}) => {
+    const fluidAmount = amountStringToInt(loader, fluidData.amount);
     const recipe = {
         type: "create:filling",
         ingredients: [
@@ -158,7 +237,7 @@ const createFillingRecipe = ({fluidData, mod, loader, customNBT={}}) => {
             {
                 fluid: `${MOD_ID}:${fluidData.fluid}`,
                 nbt: customNBT,
-                amount: LOADER_FLUID_QUANTITIES.bottles[loader]
+                amount: fluidAmount
             }
         ],
         results: [
@@ -192,14 +271,14 @@ const createMixingRecipe = ({fluidData, mod, loader}) => {
         ] : fluidData.mixer.ingredients.map((item) => {
             const copy = structuredClone(item)
             if(item.tag && item.tag.includes("$loader$")) copy.tag = item.tag.replaceAll("$loader$", loader=="fabric" ? "c":"forge");
-            if(item.amount == "$loader.bottles") copy.amount = LOADER_FLUID_QUANTITIES.bottles[loader];
+            if(typeof item.amount == "string") copy.amount = amountStringToInt(loader, item.amount);
             return copy;
         }),
         results: [
             {
                 fluid: `${MOD_ID}:${fluidData.fluid}`,
                 nbt: {},
-                amount: LOADER_FLUID_QUANTITIES.bottles[loader]
+                amount: amountStringToInt(loader, fluidData.amount),
             }
         ],
         
@@ -232,7 +311,7 @@ function withPerLoaderFilters({recipe, loader}){
     recipeCopy["ingredients"] = recipe.ingredients.map((ingredient) => {
         const copy = structuredClone(ingredient)
         if(ingredient.tag && ingredient.tag.includes("$loader$")) copy.tag = ingredient.tag.replaceAll("$loader$", loader=="fabric" ? "c":"forge");
-        if(ingredient.amount == "$loader.bottles") copy.amount = LOADER_FLUID_QUANTITIES.bottles[loader];
+        if(typeof ingredient.amount == "string") copy.amount = amountStringToInt(loader, ingredient.amount);
         return copy;
     })
     return recipeCopy;
@@ -335,6 +414,17 @@ for(const loader of ["fabric", "forge"]){
                 loader: loader,
                 targetMod: "create",
                 targetType: "filling",
+                item: recipe.results[0].item.split(":")[1]
+            })
+        }
+    }
+    for(const mod of Object.keys(compacting_recipes)){
+        for(const recipe of compacting_recipes[mod]){
+            writeRecipe({
+                recipe: withCreateDependencies({recipe: withPerLoaderFilters({recipe: recipe, loader: loader}), loader: loader, mod: mod}),
+                loader: loader,
+                targetMod: "create",
+                targetType: "compacting",
                 item: recipe.results[0].item.split(":")[1]
             })
         }

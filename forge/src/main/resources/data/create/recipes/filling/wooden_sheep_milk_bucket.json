@@ -1,0 +1,29 @@
+{
+    "type": "create:filling",
+    "ingredients": [
+        {
+            "item": "meadow:wooden_bucket"
+        },
+        {
+            "fluid": "doaddonfluids:sheep_milk",
+            "nbt": {},
+            "amount": 1000
+        }
+    ],
+    "results": [
+        {
+            "item": "meadow:wooden_sheep_milk_bucket",
+            "itemTag": {}
+        }
+    ],
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "meadow"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        }
+    ]
+}

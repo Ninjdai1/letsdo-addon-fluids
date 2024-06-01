@@ -1,0 +1,28 @@
+{
+    "type": "create:emptying",
+    "ingredients": [
+        {
+            "item": "meadow:wooden_warped_milk_bucket",
+            "itemTag": {}
+        }
+    ],
+    "results": [
+        {
+            "item": "meadow:wooden_bucket"
+        },
+        {
+            "fluid": "doaddonfluids:warped_milk",
+            "nbt": {},
+            "amount": 81000
+        }
+    ],
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "meadow",
+                "create"
+            ]
+        }
+    ]
+}

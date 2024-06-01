@@ -96,6 +96,9 @@ public class DoAddonFluid {
 
     //MEADOW
     public static void registerMeadowFluids() {
+        final RegistryEntry<Fluid> RENNET = FLUIDS.register("rennet", () -> new BotariumSourceFluid(DoAddonFluidProperties.RENNET));
+        final RegistryEntry<Fluid> RENNET_FLOWING = FLUIDS.register("flowing_rennet", () -> new BotariumFlowingFluid(DoAddonFluidProperties.RENNET));
+
         final RegistryEntry<Fluid> BUFFALO_MILK = FLUIDS.register("buffalo_milk", () -> new BotariumSourceFluid(DoAddonFluidProperties.BUFFALO_MILK));
         final RegistryEntry<Fluid> BUFFALO_MILK_FLOWING = FLUIDS.register("flowing_buffalo_milk", () -> new BotariumFlowingFluid(DoAddonFluidProperties.BUFFALO_MILK));
 

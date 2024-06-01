@@ -35,6 +35,7 @@ public enum DoAddonColors {
     WARPED_GRAPEJUICE(32, 140, 136),
 
     //MEADOW
+    RENNET(195, 194, 179),
     WARPED_MILK(22, 126, 134),
     SHEEP_MILK(254, 254, 254),
     GRAIN_MILK(223, 189, 157),

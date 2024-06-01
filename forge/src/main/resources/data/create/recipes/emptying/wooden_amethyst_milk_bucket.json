@@ -1,0 +1,29 @@
+{
+    "type": "create:emptying",
+    "ingredients": [
+        {
+            "item": "meadow:wooden_amethyst_milk_bucket",
+            "itemTag": {}
+        }
+    ],
+    "results": [
+        {
+            "item": "meadow:wooden_bucket"
+        },
+        {
+            "fluid": "doaddonfluids:amethyst_milk",
+            "nbt": {},
+            "amount": 1000
+        }
+    ],
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "meadow"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        }
+    ]
+}

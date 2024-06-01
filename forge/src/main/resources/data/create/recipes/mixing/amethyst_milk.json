@@ -1,0 +1,34 @@
+{
+    "type": "create:mixing",
+    "heatRequirement": "heated",
+    "ingredients": [
+        {
+            "item": "minecraft:amethyst_cluster"
+        },
+        {
+            "item": "meadow:alpine_salt"
+        },
+        {
+            "fluid": "minecraft:milk",
+            "nbt": {},
+            "amount": 1000
+        }
+    ],
+    "results": [
+        {
+            "fluid": "doaddonfluids:amethyst_milk",
+            "nbt": {},
+            "amount": 1000
+        }
+    ],
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "meadow"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        }
+    ]
+}

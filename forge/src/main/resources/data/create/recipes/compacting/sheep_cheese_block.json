@@ -1,0 +1,30 @@
+{
+    "type": "create:compacting",
+    "ingredients": [
+        {
+            "amount": 250,
+            "nbt": {},
+            "fluid": "doaddonfluids:rennet"
+        },
+        {
+            "amount": 250,
+            "nbt": {},
+            "fluid": "doaddonfluids:sheep_milk"
+        }
+    ],
+    "results": [
+        {
+            "item": "meadow:sheep_cheese_block"
+        }
+    ],
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "meadow"
+        },
+        {
+            "type": "forge:mod_loaded",
+            "modid": "create"
+        }
+    ]
+}

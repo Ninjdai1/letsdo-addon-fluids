@@ -35,6 +35,22 @@ public class DoAddonFluidProperties {
 
     // Water-like
     //Meadow
+    public static final FluidData RENNET = FLUID_PROPERTIES.register("rennet", FluidProperties.create()
+            .still(new ResourceLocation("minecraft", "block/water_still"))
+            .flowing(new ResourceLocation("minecraft", "block/water_flow"))
+            .overlay(new ResourceLocation("minecraft", "block/water_flow"))
+            .screenOverlay(new ResourceLocation("minecraft", "textures/misc/underwater.png"))
+            .tintColor(DoAddonColors.RENNET.value)
+            .canConvertToSource(false)
+            .canDrown(true)
+            .canExtinguish(true)
+            .canHydrate(false)
+            .canPushEntity(true)
+            .canSwim(true)
+            .viscosity(2500)
+            .density(2000)
+    );
+
     public static final FluidData BUFFALO_MILK = FLUID_PROPERTIES.register("buffalo_milk", FluidProperties.create()
             .still(new ResourceLocation("minecraft", "block/water_still"))
             .flowing(new ResourceLocation("minecraft", "block/water_flow"))

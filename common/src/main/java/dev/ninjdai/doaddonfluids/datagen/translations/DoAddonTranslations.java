@@ -26,6 +26,7 @@ public class DoAddonTranslations extends FabricLanguageProvider{
             tb.add(key + "." + DoAddonFluids.MOD_ID + "." + "crimson_grapejuice", "Crimson Grapejuice");
             tb.add(key + "." + DoAddonFluids.MOD_ID + "." + "warped_grapejuice", "Warped Grapejuice");
 
+            tb.add(key + "." + DoAddonFluids.MOD_ID + "." + "rennet", "Rennet");
             tb.add(key + "." + DoAddonFluids.MOD_ID + "." + "buffalo_milk", "Buffalo Milk");
             tb.add(key + "." + DoAddonFluids.MOD_ID + "." + "amethyst_milk", "Amethyst Milk ?");
             tb.add(key + "." + DoAddonFluids.MOD_ID + "." + "goat_milk", "Goat Milk");
