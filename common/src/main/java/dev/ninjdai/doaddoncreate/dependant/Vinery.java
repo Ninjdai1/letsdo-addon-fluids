@@ -33,14 +33,14 @@ public class Vinery implements ModSupport {
     public void registerFluidProperties() {
         final int GRAPEJUICE_VISCOSITY = 2000;
 
-        RED_GRAPEJUICE_PROPS = FLUID_PROPERTIES.register("red_grapejuice", new DoAddonFluidProperties.BetterBuilder().setWhiskyBeerGrapeJuice().namespacedTextures("vinery", "red_grapejuice").get().viscosity(GRAPEJUICE_VISCOSITY));
-        WHITE_GRAPEJUICE_PROPS = FLUID_PROPERTIES.register("white_grapejuice", new DoAddonFluidProperties.BetterBuilder().setWhiskyBeerGrapeJuice().namespacedTextures("vinery", "white_grapejuice").get().viscosity(GRAPEJUICE_VISCOSITY));
-        JUNGLE_RED_GRAPEJUICE_PROPS = FLUID_PROPERTIES.register("jungle_red_grapejuice", new DoAddonFluidProperties.BetterBuilder().setWhiskyBeerGrapeJuice().namespacedTextures("vinery", "jungle_red_grapejuice").get().viscosity(GRAPEJUICE_VISCOSITY));
-        JUNGLE_WHITE_GRAPEJUICE_PROPS = FLUID_PROPERTIES.register("jungle_white_grapejuice", new DoAddonFluidProperties.BetterBuilder().setWhiskyBeerGrapeJuice().namespacedTextures("vinery", "jungle_white_grapejuice").get().viscosity(GRAPEJUICE_VISCOSITY));
-        SAVANNA_RED_GRAPEJUICE_PROPS = FLUID_PROPERTIES.register("savanna_red_grapejuice", new DoAddonFluidProperties.BetterBuilder().setWhiskyBeerGrapeJuice().namespacedTextures("vinery", "savanna_red_grapejuice").get().viscosity(GRAPEJUICE_VISCOSITY));
-        SAVANNA_WHITE_GRAPEJUICE_PROPS = FLUID_PROPERTIES.register("savanna_white_grapejuice", new DoAddonFluidProperties.BetterBuilder().setWhiskyBeerGrapeJuice().namespacedTextures("vinery", "savanna_white_grapejuice").get().viscosity(GRAPEJUICE_VISCOSITY));
-        TAIGA_RED_GRAPEJUICE_PROPS = FLUID_PROPERTIES.register("taiga_red_grapejuice", new DoAddonFluidProperties.BetterBuilder().setWhiskyBeerGrapeJuice().namespacedTextures("vinery", "taiga_red_grapejuice").get().viscosity(GRAPEJUICE_VISCOSITY));
-        TAIGA_WHITE_GRAPEJUICE_PROPS = FLUID_PROPERTIES.register("taiga_white_grapejuice", new DoAddonFluidProperties.BetterBuilder().setWhiskyBeerGrapeJuice().namespacedTextures("vinery", "taiga_white_grapejuice").get().viscosity(GRAPEJUICE_VISCOSITY));
+        RED_GRAPEJUICE_PROPS = FLUID_PROPERTIES.register("red_grapejuice", new DoAddonFluidProperties.BetterBuilder().setWhiskyBeerGrapeJuice().namespacedTextures(supportedMod(), "red_grapejuice").get().viscosity(GRAPEJUICE_VISCOSITY));
+        WHITE_GRAPEJUICE_PROPS = FLUID_PROPERTIES.register("white_grapejuice", new DoAddonFluidProperties.BetterBuilder().setWhiskyBeerGrapeJuice().namespacedTextures(supportedMod(), "white_grapejuice").get().viscosity(GRAPEJUICE_VISCOSITY));
+        JUNGLE_RED_GRAPEJUICE_PROPS = FLUID_PROPERTIES.register("jungle_red_grapejuice", new DoAddonFluidProperties.BetterBuilder().setWhiskyBeerGrapeJuice().namespacedTextures(supportedMod(), "jungle_red_grapejuice").get().viscosity(GRAPEJUICE_VISCOSITY));
+        JUNGLE_WHITE_GRAPEJUICE_PROPS = FLUID_PROPERTIES.register("jungle_white_grapejuice", new DoAddonFluidProperties.BetterBuilder().setWhiskyBeerGrapeJuice().namespacedTextures(supportedMod(), "jungle_white_grapejuice").get().viscosity(GRAPEJUICE_VISCOSITY));
+        SAVANNA_RED_GRAPEJUICE_PROPS = FLUID_PROPERTIES.register("savanna_red_grapejuice", new DoAddonFluidProperties.BetterBuilder().setWhiskyBeerGrapeJuice().namespacedTextures(supportedMod(), "savanna_red_grapejuice").get().viscosity(GRAPEJUICE_VISCOSITY));
+        SAVANNA_WHITE_GRAPEJUICE_PROPS = FLUID_PROPERTIES.register("savanna_white_grapejuice", new DoAddonFluidProperties.BetterBuilder().setWhiskyBeerGrapeJuice().namespacedTextures(supportedMod(), "savanna_white_grapejuice").get().viscosity(GRAPEJUICE_VISCOSITY));
+        TAIGA_RED_GRAPEJUICE_PROPS = FLUID_PROPERTIES.register("taiga_red_grapejuice", new DoAddonFluidProperties.BetterBuilder().setWhiskyBeerGrapeJuice().namespacedTextures(supportedMod(), "taiga_red_grapejuice").get().viscosity(GRAPEJUICE_VISCOSITY));
+        TAIGA_WHITE_GRAPEJUICE_PROPS = FLUID_PROPERTIES.register("taiga_white_grapejuice", new DoAddonFluidProperties.BetterBuilder().setWhiskyBeerGrapeJuice().namespacedTextures(supportedMod(), "taiga_white_grapejuice").get().viscosity(GRAPEJUICE_VISCOSITY));
     }
 
     static DoAddonFluids.StateIndependantFluid RED_GRAPEJUICE;

@@ -56,6 +56,10 @@ public class Meadow implements ModSupport {
         );
 
         RENNET_PROPS = FLUID_PROPERTIES.register("rennet", FluidProperties.create()
+                .still(new ResourceLocation("minecraft", "block/water_still"))
+                .flowing(new ResourceLocation("minecraft", "block/water_flow"))
+                .overlay(new ResourceLocation("minecraft", "block/water_flow"))
+                .screenOverlay(new ResourceLocation("minecraft", "textures/misc/underwater.png"))
                 .tintColor(DoAddonColors.RENNET.value)
                 .canConvertToSource(false)
                 .canDrown(true)

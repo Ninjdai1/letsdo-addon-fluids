@@ -26,8 +26,8 @@ public class NetherVinery implements ModSupport {
     public void registerFluidProperties() {
         final int GRAPEJUICE_VISCOSITY = 2000;
 
-        CRIMSON_GRAPEJUICE_PROPS = FLUID_PROPERTIES.register("crimson_grapejuice", new DoAddonFluidProperties.BetterBuilder().setWhiskyBeerGrapeJuice().namespacedTextures("nethervinery", "crimson_grapejuice").get().viscosity(GRAPEJUICE_VISCOSITY));
-        WARPED_GRAPEJUICE_PROPS = FLUID_PROPERTIES.register("warped_grapejuice", new DoAddonFluidProperties.BetterBuilder().setWhiskyBeerGrapeJuice().namespacedTextures("nethervinery", "warped_grapejuice").get().viscosity(GRAPEJUICE_VISCOSITY));
+        CRIMSON_GRAPEJUICE_PROPS = FLUID_PROPERTIES.register("crimson_grapejuice", new DoAddonFluidProperties.BetterBuilder().setWhiskyBeerGrapeJuice().namespacedTextures(supportedMod(), "crimson_grapejuice").get().viscosity(GRAPEJUICE_VISCOSITY));
+        WARPED_GRAPEJUICE_PROPS = FLUID_PROPERTIES.register("warped_grapejuice", new DoAddonFluidProperties.BetterBuilder().setWhiskyBeerGrapeJuice().namespacedTextures(supportedMod(), "warped_grapejuice").get().viscosity(GRAPEJUICE_VISCOSITY));
     }
 
     static DoAddonFluids.StateIndependantFluid CRIMSON_GRAPEJUICE;

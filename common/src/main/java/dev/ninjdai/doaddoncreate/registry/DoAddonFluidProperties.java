@@ -13,9 +13,11 @@ public class DoAddonFluidProperties {
     public static final FluidRegistry FLUID_PROPERTIES = new FluidRegistry(DoAddonCreate.MOD_ID);
 
     public static class BetterBuilder {
-        private final FluidProperties.Builder internal = FluidProperties.create();
+        private FluidProperties.Builder internal = FluidProperties.create();
 
-        public BetterBuilder() {}
+        public BetterBuilder() {
+            waterTextures();
+        }
 
         public BetterBuilder waterTextures() {
             internal.still(new ResourceLocation("minecraft", "block/water_still"))
@@ -42,8 +44,7 @@ public class DoAddonFluidProperties {
         }
 
         public BetterBuilder setTea() {
-            waterTextures();
-            this.internal.canConvertToSource(false)
+            internal.canConvertToSource(false)
                     .canDrown(true)
                     .canExtinguish(true)
                     .canHydrate(true)
@@ -55,8 +56,7 @@ public class DoAddonFluidProperties {
         }
 
         public BetterBuilder setMilk() {
-            waterTextures();
-            this.internal.canConvertToSource(false)
+            internal.canConvertToSource(false)
                     .canDrown(true)
                     .canExtinguish(true)
                     .canHydrate(true)
@@ -67,8 +67,7 @@ public class DoAddonFluidProperties {
         }
 
         public BetterBuilder setWhiskyBeerGrapeJuice() {
-            waterTextures();
-            this.internal.canConvertToSource(false)
+            internal.canConvertToSource(false)
                     .canDrown(true)
                     .canExtinguish(true)
                     .canHydrate(true)
@@ -79,7 +78,7 @@ public class DoAddonFluidProperties {
         }
 
         public BetterBuilder setJam() {
-            this.internal.density(1500);
+            internal.density(1500);
             return this;
         }
 

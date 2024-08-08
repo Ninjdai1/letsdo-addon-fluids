@@ -7,8 +7,7 @@ public interface ModSupport {
     default void registerFluidProperties() {}
     default void registerBlocks() {}
 
-    static String supportedMod() {
-        Class<?> currentClass = new Object(){}.getClass().getEnclosingClass();
-        return currentClass.getAnnotation(SupportsMod.class).value();
+    default String supportedMod() {
+        return this.getClass().getAnnotation(SupportsMod.class).value();
     }
 }
