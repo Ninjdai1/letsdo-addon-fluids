@@ -1,9 +1,21 @@
 {
     "replace": false,
     "values": [
-        "doaddoncreate:strawberry_jam",
-        "doaddoncreate:glowberry_jam",
-        "doaddoncreate:sweetberry_jam",
-        "doaddoncreate:apple_jam"
+        {
+            "id": "doaddoncreate:strawberry_jam",
+            "required": false
+        },
+        {
+            "id": "doaddoncreate:glowberry_jam",
+            "required": false
+        },
+        {
+            "id": "doaddoncreate:sweetberry_jam",
+            "required": false
+        },
+        {
+            "id": "doaddoncreate:apple_jam",
+            "required": false
+        }
     ]
 }
