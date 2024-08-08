@@ -5,7 +5,7 @@
             "item": "minecraft:glass_bottle"
         },
         {
-            "fluid": "doaddonfluids:rennet",
+            "fluid": "doaddoncreate:rennet",
             "nbt": {},
             "amount": 27000
         }

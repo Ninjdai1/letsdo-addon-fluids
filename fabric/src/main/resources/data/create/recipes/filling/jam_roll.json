@@ -6,7 +6,7 @@
         },
         {
             "amount": 27000,
-            "fluidTag": "doaddonfluids:jam"
+            "fluidTag": "doaddoncreate:jam"
         }
     ],
     "results": [

@@ -7,7 +7,7 @@ pluginManagement {
     }
 }
 
-rootProject.name = 'doaddonfluids'
+rootProject.name = 'doaddoncreate'
 
 include 'common'
 include 'fabric'

@@ -11,7 +11,7 @@
             "item": "bakery:jar"
         },
         {
-            "fluid": "doaddonfluids:strawberry_jam",
+            "fluid": "doaddoncreate:strawberry_jam",
             "nbt": {},
             "amount": 27000
         }

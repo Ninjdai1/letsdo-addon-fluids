@@ -8,7 +8,7 @@
     ],
     "results": [
         {
-            "fluid": "doaddonfluids:taiga_white_grapejuice",
+            "fluid": "doaddoncreate:taiga_white_grapejuice",
             "nbt": {},
             "amount": 27000
         }

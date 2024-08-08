@@ -2,7 +2,7 @@
     "type": "create:mixing",
     "ingredients": [
         {
-            "fluid": "doaddonfluids:coffee",
+            "fluid": "doaddoncreate:coffee",
             "nbt": {},
             "amount": 27000
         },
@@ -14,7 +14,7 @@
     ],
     "results": [
         {
-            "fluid": "doaddonfluids:milk_coffee",
+            "fluid": "doaddoncreate:milk_coffee",
             "nbt": {},
             "amount": 27000
         }

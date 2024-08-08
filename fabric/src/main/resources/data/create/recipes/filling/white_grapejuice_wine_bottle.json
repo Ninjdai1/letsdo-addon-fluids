@@ -5,7 +5,7 @@
             "item": "vinery:wine_bottle"
         },
         {
-            "fluid": "doaddonfluids:white_grapejuice",
+            "fluid": "doaddoncreate:white_grapejuice",
             "nbt": {},
             "amount": 27000
         }

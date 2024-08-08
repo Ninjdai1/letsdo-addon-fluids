@@ -11,7 +11,7 @@
     ],
     "results": [
         {
-            "fluid": "doaddonfluids:glowberry_jam",
+            "fluid": "doaddoncreate:glowberry_jam",
             "nbt": {},
             "amount": 250
         }

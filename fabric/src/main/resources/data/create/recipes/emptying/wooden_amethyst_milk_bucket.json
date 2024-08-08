@@ -11,7 +11,7 @@
             "item": "meadow:wooden_bucket"
         },
         {
-            "fluid": "doaddonfluids:amethyst_milk",
+            "fluid": "doaddoncreate:amethyst_milk",
             "nbt": {},
             "amount": 81000
         }

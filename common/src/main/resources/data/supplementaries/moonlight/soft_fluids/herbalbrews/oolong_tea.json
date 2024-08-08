@@ -14,6 +14,6 @@
     "divider": "BOTTLE",
     "item": "herbalbrews:oolong_tea"
   },
-  "from_mod": "doaddonfluids",
+  "from_mod": "doaddoncreate",
   "still_texture": "moonlight:block/soft_fluids/soup_liquid"
 }

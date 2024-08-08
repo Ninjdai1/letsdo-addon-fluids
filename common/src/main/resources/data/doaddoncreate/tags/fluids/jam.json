@@ -1,0 +1,9 @@
+{
+    "replace": false,
+    "values": [
+        "doaddoncreate:strawberry_jam",
+        "doaddoncreate:glowberry_jam",
+        "doaddoncreate:sweetberry_jam",
+        "doaddoncreate:apple_jam"
+    ]
+}

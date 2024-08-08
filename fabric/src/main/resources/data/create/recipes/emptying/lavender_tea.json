@@ -11,7 +11,7 @@
             "item": "minecraft:glass_bottle"
         },
         {
-            "fluid": "doaddonfluids:lavender_tea",
+            "fluid": "doaddoncreate:lavender_tea",
             "nbt": {},
             "amount": 27000
         }

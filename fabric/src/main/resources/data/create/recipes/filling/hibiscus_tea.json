@@ -5,7 +5,7 @@
             "item": "minecraft:glass_bottle"
         },
         {
-            "fluid": "doaddonfluids:hibiscus_tea",
+            "fluid": "doaddoncreate:hibiscus_tea",
             "nbt": {},
             "amount": 27000
         }

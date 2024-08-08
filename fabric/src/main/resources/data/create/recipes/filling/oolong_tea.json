@@ -5,7 +5,7 @@
             "item": "minecraft:glass_bottle"
         },
         {
-            "fluid": "doaddonfluids:oolong_tea",
+            "fluid": "doaddoncreate:oolong_tea",
             "nbt": {},
             "amount": 27000
         }

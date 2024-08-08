@@ -8,7 +8,7 @@
     ],
     "results": [
         {
-            "fluid": "doaddonfluids:savanna_white_grapejuice",
+            "fluid": "doaddoncreate:savanna_white_grapejuice",
             "nbt": {},
             "amount": 250
         }

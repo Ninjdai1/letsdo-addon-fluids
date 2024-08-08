@@ -52,7 +52,7 @@ const brews = {
             heatRequirement: "heated"
         }},
         { empty_bottle: "minecraft:glass_bottle", filled_bottle: "milk_coffee", fluid: "milk_coffee", mixer: {
-            ingredients: [{fluid: "doaddonfluids:coffee", nbt:{}, amount: "$loader.bottles"}, {fluid: "minecraft:milk", nbt:{}, amount: "$loader.bottles"}]
+            ingredients: [{fluid: "doaddoncreate:coffee", nbt:{}, amount: "$loader.bottles"}, {fluid: "minecraft:milk", nbt:{}, amount: "$loader.bottles"}]
         }},
     ],
     bakery: [
@@ -112,7 +112,7 @@ const filling_recipes = {
                 },
                 {
                   amount: "$loader.bottles",
-                  fluidTag: "doaddonfluids:jam"
+                  fluidTag: "doaddoncreate:jam"
                 }
             ],
             results: [
@@ -132,7 +132,7 @@ const compacting_recipes = {
                 {
                     amount: "$loader.bottles",
                     nbt: {},
-                    fluid: "doaddonfluids:rennet"
+                    fluid: "doaddoncreate:rennet"
                 },
                 {
                     amount: "$loader.bottles",
@@ -155,12 +155,12 @@ for(const cheese_type of ["buffalo", "amethyst", "goat", "grain", "sheep", "warp
             {
                 amount: "$loader.bottles",
                 nbt: {},
-                fluid: "doaddonfluids:rennet"
+                fluid: "doaddoncreate:rennet"
             },
             {
                 amount: "$loader.bottles",
                 nbt: {},
-                fluid: `doaddonfluids:${cheese_type}_milk`
+                fluid: `doaddoncreate:${cheese_type}_milk`
             }
         ],
         results: [
@@ -171,7 +171,7 @@ for(const cheese_type of ["buffalo", "amethyst", "goat", "grain", "sheep", "warp
     })
 }
 
-const MOD_ID = "doaddonfluids"
+const MOD_ID = "doaddoncreate"
 const LOADER_FLUID_QUANTITIES = {
     bottles: {
         forge: 250,

@@ -11,7 +11,7 @@
             "item": "minecraft:glass_bottle"
         },
         {
-            "fluid": "doaddonfluids:green_tea",
+            "fluid": "doaddoncreate:green_tea",
             "nbt": {},
             "amount": 250
         }

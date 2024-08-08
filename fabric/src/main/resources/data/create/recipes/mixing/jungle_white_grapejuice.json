@@ -8,7 +8,7 @@
     ],
     "results": [
         {
-            "fluid": "doaddonfluids:jungle_white_grapejuice",
+            "fluid": "doaddoncreate:jungle_white_grapejuice",
             "nbt": {},
             "amount": 27000
         }

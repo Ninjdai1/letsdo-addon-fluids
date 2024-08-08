@@ -11,7 +11,7 @@
             "item": "minecraft:glass_bottle"
         },
         {
-            "fluid": "doaddonfluids:black_tea",
+            "fluid": "doaddoncreate:black_tea",
             "nbt": {},
             "amount": 27000
         }

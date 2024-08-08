@@ -4,12 +4,12 @@
         {
             "amount": 27000,
             "nbt": {},
-            "fluid": "doaddonfluids:rennet"
+            "fluid": "doaddoncreate:rennet"
         },
         {
             "amount": 27000,
             "nbt": {},
-            "fluid": "doaddonfluids:grain_milk"
+            "fluid": "doaddoncreate:grain_milk"
         }
     ],
     "results": [

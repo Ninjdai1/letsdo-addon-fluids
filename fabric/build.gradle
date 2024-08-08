@@ -71,7 +71,7 @@ loom {
             name "Data Generation (client)"
             vmArg "-Dfabric-api.datagen"
             vmArg "-Dfabric-api.datagen.output-dir=${common.file("src/main/generated")}"
-            vmArg "-Dfabric-api.datagen.modid=doaddonfluids"
+            vmArg "-Dfabric-api.datagen.modid=doaddoncreate"
             vmArg "-Dporting_lib.datagen.existing_resources=${common.file("src/main/resources")}"
 
             runDir "build/datagen"
@@ -85,7 +85,7 @@ loom {
         }
     }
 
-    accessWidenerPath = common.file("src/main/resources/doaddonfluids.accesswidener")
+    accessWidenerPath = common.file("src/main/resources/doaddoncreate.accesswidener")
 }
 
 sourceSets {

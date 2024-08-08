@@ -13,7 +13,7 @@
     ],
     "results": [
         {
-            "fluid": "doaddonfluids:coffee",
+            "fluid": "doaddoncreate:coffee",
             "nbt": {},
             "amount": 27000
         }

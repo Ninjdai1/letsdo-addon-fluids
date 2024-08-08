@@ -16,7 +16,7 @@
     ],
     "results": [
         {
-            "fluid": "doaddonfluids:amethyst_milk",
+            "fluid": "doaddoncreate:amethyst_milk",
             "nbt": {},
             "amount": 1000
         }

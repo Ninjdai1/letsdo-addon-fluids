@@ -5,7 +5,7 @@
             "item": "bakery:jar"
         },
         {
-            "fluid": "doaddonfluids:glowberry_jam",
+            "fluid": "doaddoncreate:glowberry_jam",
             "nbt": {},
             "amount": 27000
         }

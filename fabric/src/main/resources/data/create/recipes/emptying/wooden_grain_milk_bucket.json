@@ -11,7 +11,7 @@
             "item": "meadow:wooden_bucket"
         },
         {
-            "fluid": "doaddonfluids:grain_milk",
+            "fluid": "doaddoncreate:grain_milk",
             "nbt": {},
             "amount": 81000
         }

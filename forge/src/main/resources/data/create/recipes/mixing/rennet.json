@@ -11,7 +11,7 @@
     ],
     "results": [
         {
-            "fluid": "doaddonfluids:rennet",
+            "fluid": "doaddoncreate:rennet",
             "nbt": {},
             "amount": 250
         }

@@ -11,22 +11,22 @@ tasks.register("multiplatformDatagen") {
     Project forge = project(":forge")
     dependsOn project(":fabric").tasks.named("runDatagen")
     // Copy the fabric only recipes to the generated resources
-    File fabricDir = fabric.file("src/main/generated/data/doaddonfluids/recipes/")
-    File forgeDir = forge.file("src/main/generated/data/doaddonfluids/recipes/")
+    File fabricDir = fabric.file("src/main/generated/data/doaddoncreate/recipes/")
+    File forgeDir = forge.file("src/main/generated/data/doaddoncreate/recipes/")
 
     delete(fabricDir)
     delete(forgeDir)
 
     copy {
-        from common.file("src/main/generated/data/doaddonfluids/recipes/.fabric")
+        from common.file("src/main/generated/data/doaddoncreate/recipes/.fabric")
         include "**/*.json"
-        into fabric.file("src/main/generated/data/doaddonfluids/recipes/")
+        into fabric.file("src/main/generated/data/doaddoncreate/recipes/")
     }
     // Copy the forge only recipes to the generated resources
     copy {
-        from common.file("src/main/generated/data/doaddonfluids/recipes/.forge")
+        from common.file("src/main/generated/data/doaddoncreate/recipes/.forge")
         include "**/*.json"
-        into forge.file("src/main/generated/data/doaddonfluids/recipes/")
+        into forge.file("src/main/generated/data/doaddoncreate/recipes/")
     }
 }
 
@@ -50,11 +50,7 @@ subprojects {
     }
 
     repositories {
-        // Add repositories to retrieve artifacts from in here.
-        // You should only use this when depending on other mods because
-        // Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
-        // See https://docs.gradle.org/current/userguide/declaring_repositories.html
-        // for more information about repositories.
+        mavenCentral()
         maven { name = "Resourceful Maven"; description = "Botarium & ResourcefulLib"; url = "https://maven.teamresourceful.com/repository/maven-public/" }
         maven { name = "Devos Maven"; description = "Create Fabric, Porting Lib, Forge Tags, Milk Lib & Fabric Registrate"; url = "https://mvn.devos.one/snapshots/" }
         maven { name = "Curseforge Maven"; description = "Forge Config API Port"; url = "https://cursemaven.com" }
@@ -78,8 +74,11 @@ subprojects {
         minecraft "net.minecraft:minecraft:$rootProject.minecraft_version"
         mappings loom.officialMojangMappings()
 
+        include(implementation("org.reflections:reflections:0.10.2"))
+
         modApi("com.teamresourceful.resourcefullib:resourcefullib-${project.name}-${rootProject.minecraft_version}:${rootProject.resourcefullib_version}")
         modApi("earth.terrarium.botarium:botarium-${project.name}-${rootProject.minecraft_version}:${rootProject.botarium_version}")
+
         modCompileOnly("maven.modrinth:lets-do-meadow:${rootProject.meadow_version}")
         modCompileOnly("maven.modrinth:lets-do-vinery:${rootProject.vinery_version}")
         modCompileOnly("maven.modrinth:lets-do-brewery:${rootProject.brewery_version}")

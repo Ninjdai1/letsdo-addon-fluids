@@ -8,7 +8,7 @@
     ],
     "results": [
         {
-            "fluid": "doaddonfluids:warped_grapejuice",
+            "fluid": "doaddoncreate:warped_grapejuice",
             "nbt": {},
             "amount": 250
         }

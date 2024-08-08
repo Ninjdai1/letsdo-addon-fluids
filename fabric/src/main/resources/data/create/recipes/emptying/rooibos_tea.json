@@ -11,7 +11,7 @@
             "item": "minecraft:glass_bottle"
         },
         {
-            "fluid": "doaddonfluids:rooibos_tea",
+            "fluid": "doaddoncreate:rooibos_tea",
             "nbt": {},
             "amount": 27000
         }

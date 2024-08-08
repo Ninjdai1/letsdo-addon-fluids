@@ -1,32 +1,34 @@
 {
   "schemaVersion": 1,
-  "id": "doaddonfluids",
+  "id": "doaddoncreate",
   "version": "${version}",
-  "name": "[Let's Do Addon] Fluids",
-  "description": "Add fluids to the Let's Do series for even more modded usage !",
+  "name": "[Let's Do Addon] Create",
+  "description": "Add create compat and fluids to the Let's Do series for even more modded usage !",
   "authors": [
-    "Ninjdai"
+    "Ninjdai",
+    "Satisfyu",
+    "cph101"
   ],
   "contact": {
     "homepage": "https://modrinth.com/mod/lets-do-addon-fluids",
     "sources": "https://github.com/Ninjdai1/letsdo-addon-fluids"
   },
   "license": "GPLv3",
-  "icon": "assets/doaddonfluids/icon.png",
+  "icon": "assets/doaddoncreate/icon.png",
   "environment": "*",
   "entrypoints": {
     "fabric-datagen": [
-      "dev.ninjdai.doaddonfluids.datagen.DoAddonDataGenerator"
+      "dev.ninjdai.doaddoncreate.datagen.DoAddonDataGenerator"
     ],
     "main": [
-      "dev.ninjdai.doaddonfluids.fabric.DoAddonFluidsFabric"
+      "dev.ninjdai.doaddoncreate.fabric.DoAddonCreateFabric"
     ],
     "client": [
-      "dev.ninjdai.doaddonfluids.fabric.client.DoAddonFluidsFabricClient"
+      "dev.ninjdai.doaddoncreate.fabric.client.DoAddonCreateFabricClient"
     ]
   },
   "mixins": [
-    "doaddonfluids.mixins.json"
+    "doaddoncreate.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.15.10",

@@ -11,7 +11,7 @@
     ],
     "results": [
         {
-            "fluid": "doaddonfluids:sweetberry_jam",
+            "fluid": "doaddoncreate:sweetberry_jam",
             "nbt": {},
             "amount": 27000
         }

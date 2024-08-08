@@ -16,7 +16,7 @@
     ],
     "results": [
         {
-            "fluid": "doaddonfluids:yerba_mate_tea",
+            "fluid": "doaddoncreate:yerba_mate_tea",
             "nbt": {},
             "amount": 250
         }

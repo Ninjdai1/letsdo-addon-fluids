@@ -8,7 +8,7 @@
     ],
     "results": [
         {
-            "fluid": "doaddonfluids:red_grapejuice",
+            "fluid": "doaddoncreate:red_grapejuice",
             "nbt": {},
             "amount": 250
         }

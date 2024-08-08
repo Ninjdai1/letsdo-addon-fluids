@@ -13,7 +13,7 @@
     ],
     "results": [
         {
-            "fluid": "doaddonfluids:oolong_tea",
+            "fluid": "doaddoncreate:oolong_tea",
             "nbt": {},
             "amount": 27000
         }

@@ -5,7 +5,7 @@
             "item": "minecraft:glass_bottle"
         },
         {
-            "fluid": "doaddonfluids:yerba_mate_tea",
+            "fluid": "doaddoncreate:yerba_mate_tea",
             "nbt": {},
             "amount": 27000
         }
