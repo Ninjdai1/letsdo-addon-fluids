@@ -8,8 +8,8 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * This annotation is used to mark methods to be run in addition to the methods statically invoked by classes annotated by {@link ModSupport}.
- * They must be static and housed by a class matching the aforementioned criteria.
+ * This annotation is used to mark methods to be run in addition to methods inherited from {@link ModSupport}.
+ * They must be static and housed by a class extending {@link ModSupport} and annotated by {@link SupportsMod}.
  */
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)

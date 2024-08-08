@@ -12,27 +12,6 @@ import static dev.ninjdai.doaddoncreate.registry.DoAddonFluidProperties.FLUID_PR
 public class Brewery implements ModSupport {
 
     // Fluids
-    /*public static final RegistryEntry<Fluid> WHEAT_BEER = FLUIDS.register("beer_wheat", () -> new BotariumSourceFluid(DoAddonFluidProperties.WHEAT_BEER));
-    public static final RegistryEntry<Fluid> WHEAT_BEER_FLOWING = FLUIDS.register("flowing_beer_wheat", () -> new BotariumFlowingFluid(DoAddonFluidProperties.WHEAT_BEER));
-    public static final RegistryEntry<Fluid> BARLEY_BEER = FLUIDS.register("beer_barley", () -> new BotariumSourceFluid(DoAddonFluidProperties.BARLEY_BEER));
-    public static final RegistryEntry<Fluid> BARLEY_BEER_FLOWING = FLUIDS.register("flowing_beer_barley", () -> new BotariumFlowingFluid(DoAddonFluidProperties.BARLEY_BEER));
-    public static final RegistryEntry<Fluid> HOPS_BEER = FLUIDS.register("beer_hops", () -> new BotariumSourceFluid(DoAddonFluidProperties.HOPS_BEER));
-    public static final RegistryEntry<Fluid> HOPS_BEER_FLOWING = FLUIDS.register("flowing_beer_hope", () -> new BotariumFlowingFluid(DoAddonFluidProperties.HOPS_BEER));
-    public static final RegistryEntry<Fluid> HALEY_BEER = FLUIDS.register("beer_haley", () -> new BotariumSourceFluid(DoAddonFluidProperties.HALEY_BEER));
-    public static final RegistryEntry<Fluid> HALEY_BEER_FLOWING = FLUIDS.register("flowing_beer_haley", () -> new BotariumFlowingFluid(DoAddonFluidProperties.HALEY_BEER));
-
-    public static final RegistryEntry<Fluid> JOJANNIK_WHISKEY = FLUIDS.register("whiskey_jojannik", () -> new BotariumSourceFluid(DoAddonFluidProperties.JOJANNIK_WHISKEY));
-    public static final RegistryEntry<Fluid> JOJANNIK_WHISKEY_FLOWING = FLUIDS.register("flowing_whiskey_jojannik", () -> new BotariumFlowingFluid(DoAddonFluidProperties.JOJANNIK_WHISKEY));
-    public static final RegistryEntry<Fluid> LILITUSINGLEMALT_WHISKEY = FLUIDS.register("whiskey_lilitusinglemalt", () -> new BotariumSourceFluid(DoAddonFluidProperties.LILITUSINGLEMALT_WHISKEY));
-    public static final RegistryEntry<Fluid> LILITUSINGLEMALT_WHISKEY_FLOWING = FLUIDS.register("flowing_whiskey_lilitusinglemalt", () -> new BotariumFlowingFluid(DoAddonFluidProperties.LILITUSINGLEMALT_WHISKEY));
-    public static final RegistryEntry<Fluid> CRISTELWALKER_WHISKEY = FLUIDS.register("whiskey_cristelwalker", () -> new BotariumSourceFluid(DoAddonFluidProperties.CRISTELWALKER_WHISKEY));
-    public static final RegistryEntry<Fluid> CRISTELWALKER_WHISKEY_FLOWING = FLUIDS.register("flowing_whiskey_cristelwalker", () -> new BotariumFlowingFluid(DoAddonFluidProperties.CRISTELWALKER_WHISKEY));
-    public static final RegistryEntry<Fluid> MAGGOALLAN_WHISKEY = FLUIDS.register("whiskey_maggoallan", () -> new BotariumSourceFluid(DoAddonFluidProperties.MAGGOALLAN_WHISKEY));
-    public static final RegistryEntry<Fluid> MAGGOALLAN_WHISKEY_FLOWING = FLUIDS.register("flowing_whiskey_maggoallan", () -> new BotariumFlowingFluid(DoAddonFluidProperties.MAGGOALLAN_WHISKEY));
-    public static final RegistryEntry<Fluid> CARRASCONLABEL_WHISKEY = FLUIDS.register("whiskey_carrasconlabel", () -> new BotariumSourceFluid(DoAddonFluidProperties.CARRASCONLABEL_WHISKEY));
-    public static final RegistryEntry<Fluid> CARRASCONLABEL_WHISKEY_FLOWING = FLUIDS.register("flowing_whiskey_carrasconlabel", () -> new BotariumFlowingFluid(DoAddonFluidProperties.CARRASCONLABEL_WHISKEY));
-    */
-
     static FluidData WHEAT_BEER_PROPS;
     static FluidData BARLEY_BEER_PROPS;
     static FluidData HOPS_BEER_PROPS;
@@ -94,4 +73,25 @@ public class Brewery implements ModSupport {
                 .viscosity(WHISKEY_VISCOSITY)
         );
     }
+
+    /*public static final RegistryEntry<Fluid> WHEAT_BEER = FLUIDS.register("beer_wheat", () -> new BotariumSourceFluid(DoAddonFluidProperties.WHEAT_BEER));
+    public static final RegistryEntry<Fluid> WHEAT_BEER_FLOWING = FLUIDS.register("flowing_beer_wheat", () -> new BotariumFlowingFluid(DoAddonFluidProperties.WHEAT_BEER));
+    public static final RegistryEntry<Fluid> BARLEY_BEER = FLUIDS.register("beer_barley", () -> new BotariumSourceFluid(DoAddonFluidProperties.BARLEY_BEER));
+    public static final RegistryEntry<Fluid> BARLEY_BEER_FLOWING = FLUIDS.register("flowing_beer_barley", () -> new BotariumFlowingFluid(DoAddonFluidProperties.BARLEY_BEER));
+    public static final RegistryEntry<Fluid> HOPS_BEER = FLUIDS.register("beer_hops", () -> new BotariumSourceFluid(DoAddonFluidProperties.HOPS_BEER));
+    public static final RegistryEntry<Fluid> HOPS_BEER_FLOWING = FLUIDS.register("flowing_beer_hope", () -> new BotariumFlowingFluid(DoAddonFluidProperties.HOPS_BEER));
+    public static final RegistryEntry<Fluid> HALEY_BEER = FLUIDS.register("beer_haley", () -> new BotariumSourceFluid(DoAddonFluidProperties.HALEY_BEER));
+    public static final RegistryEntry<Fluid> HALEY_BEER_FLOWING = FLUIDS.register("flowing_beer_haley", () -> new BotariumFlowingFluid(DoAddonFluidProperties.HALEY_BEER));
+
+    public static final RegistryEntry<Fluid> JOJANNIK_WHISKEY = FLUIDS.register("whiskey_jojannik", () -> new BotariumSourceFluid(DoAddonFluidProperties.JOJANNIK_WHISKEY));
+    public static final RegistryEntry<Fluid> JOJANNIK_WHISKEY_FLOWING = FLUIDS.register("flowing_whiskey_jojannik", () -> new BotariumFlowingFluid(DoAddonFluidProperties.JOJANNIK_WHISKEY));
+    public static final RegistryEntry<Fluid> LILITUSINGLEMALT_WHISKEY = FLUIDS.register("whiskey_lilitusinglemalt", () -> new BotariumSourceFluid(DoAddonFluidProperties.LILITUSINGLEMALT_WHISKEY));
+    public static final RegistryEntry<Fluid> LILITUSINGLEMALT_WHISKEY_FLOWING = FLUIDS.register("flowing_whiskey_lilitusinglemalt", () -> new BotariumFlowingFluid(DoAddonFluidProperties.LILITUSINGLEMALT_WHISKEY));
+    public static final RegistryEntry<Fluid> CRISTELWALKER_WHISKEY = FLUIDS.register("whiskey_cristelwalker", () -> new BotariumSourceFluid(DoAddonFluidProperties.CRISTELWALKER_WHISKEY));
+    public static final RegistryEntry<Fluid> CRISTELWALKER_WHISKEY_FLOWING = FLUIDS.register("flowing_whiskey_cristelwalker", () -> new BotariumFlowingFluid(DoAddonFluidProperties.CRISTELWALKER_WHISKEY));
+    public static final RegistryEntry<Fluid> MAGGOALLAN_WHISKEY = FLUIDS.register("whiskey_maggoallan", () -> new BotariumSourceFluid(DoAddonFluidProperties.MAGGOALLAN_WHISKEY));
+    public static final RegistryEntry<Fluid> MAGGOALLAN_WHISKEY_FLOWING = FLUIDS.register("flowing_whiskey_maggoallan", () -> new BotariumFlowingFluid(DoAddonFluidProperties.MAGGOALLAN_WHISKEY));
+    public static final RegistryEntry<Fluid> CARRASCONLABEL_WHISKEY = FLUIDS.register("whiskey_carrasconlabel", () -> new BotariumSourceFluid(DoAddonFluidProperties.CARRASCONLABEL_WHISKEY));
+    public static final RegistryEntry<Fluid> CARRASCONLABEL_WHISKEY_FLOWING = FLUIDS.register("flowing_whiskey_carrasconlabel", () -> new BotariumFlowingFluid(DoAddonFluidProperties.CARRASCONLABEL_WHISKEY));
+    */
 }

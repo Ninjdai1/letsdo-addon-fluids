@@ -13,28 +13,6 @@ import static dev.ninjdai.doaddoncreate.registry.DoAddonFluidProperties.FLUID_PR
 public class HerbalBrews implements ModSupport {
 
     // Fluids
-    static DoAddonFluids.StateIndependantFluid GREEN_TEA;
-    static DoAddonFluids.StateIndependantFluid BLACK_TEA;
-    static DoAddonFluids.StateIndependantFluid HIBISCUS_TEA;
-    static DoAddonFluids.StateIndependantFluid LAVENDER_TEA;
-    static DoAddonFluids.StateIndependantFluid YERBA_MATE_TEA;
-    static DoAddonFluids.StateIndependantFluid ROOIBOS_TEA;
-    static DoAddonFluids.StateIndependantFluid OOLONG_TEA;
-    static DoAddonFluids.StateIndependantFluid COFFEE;
-    static DoAddonFluids.StateIndependantFluid MILK_COFFEE;
-
-    public void registerFluids() {
-        GREEN_TEA = DoAddonFluids.registerDualStatesByName("green_tea");
-        BLACK_TEA = DoAddonFluids.registerDualStatesByName("black_tea");
-        HIBISCUS_TEA = DoAddonFluids.registerDualStatesByName("hibiscus_tea");
-        LAVENDER_TEA = DoAddonFluids.registerDualStatesByName("lavender_tea");
-        YERBA_MATE_TEA = DoAddonFluids.registerDualStatesByName("yerba_mate_tea");
-        ROOIBOS_TEA = DoAddonFluids.registerDualStatesByName("rooibos_tea");
-        OOLONG_TEA = DoAddonFluids.registerDualStatesByName("oolong_tea");
-        COFFEE = DoAddonFluids.registerDualStatesByName("coffee");
-        MILK_COFFEE = DoAddonFluids.registerDualStatesByName("milk_coffee");
-    }
-    
     static FluidData GREEN_TEA_PROPS;
     static FluidData BLACK_TEA_PROPS;
     static FluidData HIBISCUS_TEA_PROPS;
@@ -75,5 +53,27 @@ public class HerbalBrews implements ModSupport {
         MILK_COFFEE_PROPS = FLUID_PROPERTIES.register("milk_coffee", new DoAddonFluidProperties.BetterBuilder().setTea().get()
                 .tintColor(DoAddonColors.MILK_COFFEE.value)
         );
+    }
+
+    static DoAddonFluids.StateIndependantFluid GREEN_TEA;
+    static DoAddonFluids.StateIndependantFluid BLACK_TEA;
+    static DoAddonFluids.StateIndependantFluid HIBISCUS_TEA;
+    static DoAddonFluids.StateIndependantFluid LAVENDER_TEA;
+    static DoAddonFluids.StateIndependantFluid YERBA_MATE_TEA;
+    static DoAddonFluids.StateIndependantFluid ROOIBOS_TEA;
+    static DoAddonFluids.StateIndependantFluid OOLONG_TEA;
+    static DoAddonFluids.StateIndependantFluid COFFEE;
+    static DoAddonFluids.StateIndependantFluid MILK_COFFEE;
+
+    public void registerFluids() {
+        GREEN_TEA = DoAddonFluids.registerDualStatesByName("green_tea", GREEN_TEA_PROPS);
+        BLACK_TEA = DoAddonFluids.registerDualStatesByName("black_tea", BLACK_TEA_PROPS);
+        HIBISCUS_TEA = DoAddonFluids.registerDualStatesByName("hibiscus_tea", HIBISCUS_TEA_PROPS);
+        LAVENDER_TEA = DoAddonFluids.registerDualStatesByName("lavender_tea", LAVENDER_TEA_PROPS);
+        YERBA_MATE_TEA = DoAddonFluids.registerDualStatesByName("yerba_mate_tea", YERBA_MATE_TEA_PROPS);
+        ROOIBOS_TEA = DoAddonFluids.registerDualStatesByName("rooibos_tea", ROOIBOS_TEA_PROPS);
+        OOLONG_TEA = DoAddonFluids.registerDualStatesByName("oolong_tea", OOLONG_TEA_PROPS);
+        COFFEE = DoAddonFluids.registerDualStatesByName("coffee", COFFEE_PROPS);
+        MILK_COFFEE = DoAddonFluids.registerDualStatesByName("milk_coffee", MILK_COFFEE_PROPS);
     }
 }

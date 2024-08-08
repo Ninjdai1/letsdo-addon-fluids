@@ -19,14 +19,6 @@ import static dev.ninjdai.doaddoncreate.registry.DoAddonFluidProperties.FLUID_PR
 public class NetherVinery implements ModSupport {
 
     // Fluids
-    static DoAddonFluids.StateIndependantFluid CRIMSON_GRAPEJUICE;
-    static DoAddonFluids.StateIndependantFluid WARPED_GRAPEJUICE;
-
-    public void registerFluids() {
-        CRIMSON_GRAPEJUICE = DoAddonFluids.registerDualStatesByName("crimson_grapejuice");
-        WARPED_GRAPEJUICE = DoAddonFluids.registerDualStatesByName("warped_grapejuice");
-    }
-
     static FluidData CRIMSON_GRAPEJUICE_PROPS;
     static FluidData WARPED_GRAPEJUICE_PROPS;
 
@@ -36,6 +28,14 @@ public class NetherVinery implements ModSupport {
 
         CRIMSON_GRAPEJUICE_PROPS = FLUID_PROPERTIES.register("crimson_grapejuice", new DoAddonFluidProperties.BetterBuilder().setWhiskyBeerGrapeJuice().namespacedTextures("nethervinery", "crimson_grapejuice").get().viscosity(GRAPEJUICE_VISCOSITY));
         WARPED_GRAPEJUICE_PROPS = FLUID_PROPERTIES.register("warped_grapejuice", new DoAddonFluidProperties.BetterBuilder().setWhiskyBeerGrapeJuice().namespacedTextures("nethervinery", "warped_grapejuice").get().viscosity(GRAPEJUICE_VISCOSITY));
+    }
+
+    static DoAddonFluids.StateIndependantFluid CRIMSON_GRAPEJUICE;
+    static DoAddonFluids.StateIndependantFluid WARPED_GRAPEJUICE;
+
+    public void registerFluids() {
+        CRIMSON_GRAPEJUICE = DoAddonFluids.registerDualStatesByName("crimson_grapejuice", CRIMSON_GRAPEJUICE_PROPS);
+        WARPED_GRAPEJUICE = DoAddonFluids.registerDualStatesByName("warped_grapejuice", WARPED_GRAPEJUICE_PROPS);
     }
 
     static RegistryEntry<Block> CRIMSON_GRAPEJUICE_BLOCK;

@@ -17,24 +17,6 @@ import static dev.ninjdai.doaddoncreate.registry.DoAddonFluidProperties.FLUID_PR
 public class Meadow implements ModSupport {
 
     // Fluids
-    static DoAddonFluids.StateIndependantFluid RENNET;
-    static DoAddonFluids.StateIndependantFluid BUFFALO_MILK;
-    static DoAddonFluids.StateIndependantFluid AMETHYST_MILK;
-    static DoAddonFluids.StateIndependantFluid GOAT_MILK;
-    static DoAddonFluids.StateIndependantFluid GRAIN_MILK;
-    static DoAddonFluids.StateIndependantFluid SHEEP_MILK;
-    static DoAddonFluids.StateIndependantFluid WARPED_MILK;
-
-    public void registerFluids() {
-        RENNET = DoAddonFluids.registerDualStatesByName("rennet");
-        BUFFALO_MILK = DoAddonFluids.registerDualStatesByName("buffalo_milk");
-        AMETHYST_MILK = DoAddonFluids.registerDualStatesByName("amethyst_milk");
-        GOAT_MILK = DoAddonFluids.registerDualStatesByName("goat_milk");
-        GRAIN_MILK = DoAddonFluids.registerDualStatesByName("grain_milk");
-        SHEEP_MILK = DoAddonFluids.registerDualStatesByName("sheep_milk");
-        WARPED_MILK = DoAddonFluids.registerDualStatesByName("warped_milk");
-    }
-
     static FluidData BUFFALO_PROPS;
     static FluidData AMETHYST_PROPS;
     static FluidData GOAT_PROPS;
@@ -84,6 +66,24 @@ public class Meadow implements ModSupport {
                 .viscosity(2500)
                 .density(2000)
         );
+    }
+
+    static DoAddonFluids.StateIndependantFluid RENNET;
+    static DoAddonFluids.StateIndependantFluid BUFFALO_MILK;
+    static DoAddonFluids.StateIndependantFluid AMETHYST_MILK;
+    static DoAddonFluids.StateIndependantFluid GOAT_MILK;
+    static DoAddonFluids.StateIndependantFluid GRAIN_MILK;
+    static DoAddonFluids.StateIndependantFluid SHEEP_MILK;
+    static DoAddonFluids.StateIndependantFluid WARPED_MILK;
+
+    public void registerFluids() {
+        RENNET = DoAddonFluids.registerDualStatesByName("rennet", RENNET_PROPS);
+        BUFFALO_MILK = DoAddonFluids.registerDualStatesByName("buffalo_milk", BUFFALO_PROPS);
+        AMETHYST_MILK = DoAddonFluids.registerDualStatesByName("amethyst_milk", AMETHYST_PROPS);
+        GOAT_MILK = DoAddonFluids.registerDualStatesByName("goat_milk", GOAT_PROPS);
+        GRAIN_MILK = DoAddonFluids.registerDualStatesByName("grain_milk", GRAIN_PROPS);
+        SHEEP_MILK = DoAddonFluids.registerDualStatesByName("sheep_milk", SHEEP_PROPS);
+        WARPED_MILK = DoAddonFluids.registerDualStatesByName("warped_milk", WARPED_PROPS);
     }
 
     @Override

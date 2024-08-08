@@ -15,15 +15,10 @@ public interface DoAddonFluids {
 
     ResourcefulRegistry<Fluid> FLUIDS = ResourcefulRegistries.create(BuiltInRegistries.FLUID, DoAddonCreate.MOD_ID);
 
-    static StateIndependantFluid registerDualStatesByName(String name) {
-        try {
-            FluidData fluid = (FluidData) DoAddonFluidProperties.class.getField(name.toUpperCase()).get(null);
-            RegistryEntry<Fluid> source = FLUIDS.register(name, () -> new BotariumSourceFluid(fluid));
-            RegistryEntry<Fluid> flowing = FLUIDS.register("flowing_" + name, () -> new BotariumFlowingFluid(fluid));
-            return new StateIndependantFluid(source, flowing);
-        } catch (Exception e) {
-            DoAddonCreate.LOGGER.error("FluidData not found for {}", name); return null;
-        }
+    static StateIndependantFluid registerDualStatesByName(String name, FluidData properties) {
+        RegistryEntry<Fluid> source = FLUIDS.register(name, () -> new BotariumSourceFluid(properties));
+        RegistryEntry<Fluid> flowing = FLUIDS.register("flowing_" + name, () -> new BotariumFlowingFluid(properties));
+        return new StateIndependantFluid(source, flowing);
     }
 
     record StateIndependantFluid(RegistryEntry<Fluid> source, RegistryEntry<Fluid> flowing) {}

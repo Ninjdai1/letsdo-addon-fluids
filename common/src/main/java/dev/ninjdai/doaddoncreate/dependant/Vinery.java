@@ -1,6 +1,7 @@
 package dev.ninjdai.doaddoncreate.dependant;
 
 import com.teamresourceful.resourcefullib.common.registry.RegistryEntry;
+import dev.ninjdai.doaddoncreate.DoAddonCreate;
 import dev.ninjdai.doaddoncreate.reflection.ModSupport;
 import dev.ninjdai.doaddoncreate.reflection.annotations.SupportsMod;
 import dev.ninjdai.doaddoncreate.registry.DoAddonFluidProperties;
@@ -19,26 +20,6 @@ import static dev.ninjdai.doaddoncreate.registry.DoAddonFluidProperties.FLUID_PR
 public class Vinery implements ModSupport {
 
     // Fluids
-    static DoAddonFluids.StateIndependantFluid RED_GRAPEJUICE;
-    static DoAddonFluids.StateIndependantFluid WHITE_GRAPEJUICE;
-    static DoAddonFluids.StateIndependantFluid JUNGLE_RED_GRAPEJUICE;
-    static DoAddonFluids.StateIndependantFluid JUNGLE_WHITE_GRAPEJUICE;
-    static DoAddonFluids.StateIndependantFluid SAVANNA_RED_GRAPEJUICE;
-    static DoAddonFluids.StateIndependantFluid SAVANNA_WHITE_GRAPEJUICE;
-    static DoAddonFluids.StateIndependantFluid TAIGA_RED_GRAPEJUICE;
-    static DoAddonFluids.StateIndependantFluid TAIGA_WHITE_GRAPEJUICE;
-
-    public void registerFluids() {
-        RED_GRAPEJUICE = DoAddonFluids.registerDualStatesByName("red_grapejuice");
-        WHITE_GRAPEJUICE = DoAddonFluids.registerDualStatesByName("white_grapejuice");
-        JUNGLE_RED_GRAPEJUICE = DoAddonFluids.registerDualStatesByName("jungle_red_grapejuice");
-        JUNGLE_WHITE_GRAPEJUICE = DoAddonFluids.registerDualStatesByName("jungle_white_grapejuice");
-        SAVANNA_RED_GRAPEJUICE = DoAddonFluids.registerDualStatesByName("savanna_red_grapejuice");
-        SAVANNA_WHITE_GRAPEJUICE = DoAddonFluids.registerDualStatesByName("savanna_white_grapejuice");
-        TAIGA_RED_GRAPEJUICE = DoAddonFluids.registerDualStatesByName("taiga_red_grapejuice");
-        TAIGA_WHITE_GRAPEJUICE = DoAddonFluids.registerDualStatesByName("taiga_white_grapejuice");
-    }
-
     static FluidData RED_GRAPEJUICE_PROPS;
     static FluidData WHITE_GRAPEJUICE_PROPS;
     static FluidData JUNGLE_RED_GRAPEJUICE_PROPS;
@@ -60,6 +41,26 @@ public class Vinery implements ModSupport {
         SAVANNA_WHITE_GRAPEJUICE_PROPS = FLUID_PROPERTIES.register("savanna_white_grapejuice", new DoAddonFluidProperties.BetterBuilder().setWhiskyBeerGrapeJuice().namespacedTextures("vinery", "savanna_white_grapejuice").get().viscosity(GRAPEJUICE_VISCOSITY));
         TAIGA_RED_GRAPEJUICE_PROPS = FLUID_PROPERTIES.register("taiga_red_grapejuice", new DoAddonFluidProperties.BetterBuilder().setWhiskyBeerGrapeJuice().namespacedTextures("vinery", "taiga_red_grapejuice").get().viscosity(GRAPEJUICE_VISCOSITY));
         TAIGA_WHITE_GRAPEJUICE_PROPS = FLUID_PROPERTIES.register("taiga_white_grapejuice", new DoAddonFluidProperties.BetterBuilder().setWhiskyBeerGrapeJuice().namespacedTextures("vinery", "taiga_white_grapejuice").get().viscosity(GRAPEJUICE_VISCOSITY));
+    }
+
+    static DoAddonFluids.StateIndependantFluid RED_GRAPEJUICE;
+    static DoAddonFluids.StateIndependantFluid WHITE_GRAPEJUICE;
+    static DoAddonFluids.StateIndependantFluid JUNGLE_RED_GRAPEJUICE;
+    static DoAddonFluids.StateIndependantFluid JUNGLE_WHITE_GRAPEJUICE;
+    static DoAddonFluids.StateIndependantFluid SAVANNA_RED_GRAPEJUICE;
+    static DoAddonFluids.StateIndependantFluid SAVANNA_WHITE_GRAPEJUICE;
+    static DoAddonFluids.StateIndependantFluid TAIGA_RED_GRAPEJUICE;
+    static DoAddonFluids.StateIndependantFluid TAIGA_WHITE_GRAPEJUICE;
+
+    public void registerFluids() {
+        RED_GRAPEJUICE = DoAddonFluids.registerDualStatesByName("red_grapejuice", RED_GRAPEJUICE_PROPS);
+        WHITE_GRAPEJUICE = DoAddonFluids.registerDualStatesByName("white_grapejuice", WHITE_GRAPEJUICE_PROPS);
+        JUNGLE_RED_GRAPEJUICE = DoAddonFluids.registerDualStatesByName("jungle_red_grapejuice", JUNGLE_RED_GRAPEJUICE_PROPS);
+        JUNGLE_WHITE_GRAPEJUICE = DoAddonFluids.registerDualStatesByName("jungle_white_grapejuice", JUNGLE_WHITE_GRAPEJUICE_PROPS);
+        SAVANNA_RED_GRAPEJUICE = DoAddonFluids.registerDualStatesByName("savanna_red_grapejuice", SAVANNA_RED_GRAPEJUICE_PROPS);
+        SAVANNA_WHITE_GRAPEJUICE = DoAddonFluids.registerDualStatesByName("savanna_white_grapejuice", SAVANNA_WHITE_GRAPEJUICE_PROPS);
+        TAIGA_RED_GRAPEJUICE = DoAddonFluids.registerDualStatesByName("taiga_red_grapejuice", TAIGA_RED_GRAPEJUICE_PROPS);
+        TAIGA_WHITE_GRAPEJUICE = DoAddonFluids.registerDualStatesByName("taiga_white_grapejuice", TAIGA_WHITE_GRAPEJUICE_PROPS);
     }
 
     static RegistryEntry<Block> RED_GRAPEJUICE_BLOCK;

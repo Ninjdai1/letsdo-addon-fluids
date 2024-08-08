@@ -3,15 +3,13 @@ package dev.ninjdai.doaddoncreate.reflection;
 
 import dev.ninjdai.doaddoncreate.DoAddonCreate;
 import dev.ninjdai.doaddoncreate.DoAddonExpectPlatform;
-import dev.ninjdai.doaddoncreate.dependant.Meadow;
 import dev.ninjdai.doaddoncreate.reflection.annotations.RunFirst;
 import dev.ninjdai.doaddoncreate.reflection.annotations.SupportsMod;
 import org.reflections.Reflections;
-import org.reflections.scanners.Scanners;
 
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Set;
 import java.util.function.Consumer;
 
@@ -21,9 +19,7 @@ public class SupportLoader {
 
     public static void loadAllSupports() {
         Reflections reflections = new Reflections(
-                "dev.ninjdai.doaddoncreate.dependant",
-                Scanners.TypesAnnotated,
-                Scanners.MethodsAnnotated
+                "dev.ninjdai.doaddoncreate.dependant"
         );
 
         Set<Class<? extends ModSupport>> modSupportClasses = reflections.getSubTypesOf(ModSupport.class);
@@ -31,9 +27,12 @@ public class SupportLoader {
         for (Class<? extends ModSupport> clazz : modSupportClasses) {
             if (!clazz.isAnnotationPresent(SupportsMod.class)) {
                 DoAddonCreate.LOGGER.error("Class {} extends ModSupport but does not have a @SupportsMod annotation, ignoring.", clazz.getName());
-                return;
+                continue;
             }
-            if (!DoAddonExpectPlatform.isModLoaded(clazz.getAnnotation(SupportsMod.class).value())) continue;
+
+            if (!DoAddonExpectPlatform.isModLoaded(clazz.getAnnotation(SupportsMod.class).value())) {
+                continue;
+            }
 
             for (Method method : clazz.getDeclaredMethods()) {
                 if (method.isAnnotationPresent(RunFirst.class)) {
@@ -41,7 +40,7 @@ public class SupportLoader {
                         method.setAccessible(true);
                         method.invoke(null);
                     } catch (Exception e) {
-                        DoAddonCreate.LOGGER.error(e.getMessage());
+                        DoAddonCreate.LOGGER.error("Error invoking method {}: {}", method.getName(), e.getMessage());
                     }
                 }
             }
@@ -58,6 +57,10 @@ public class SupportLoader {
                 throw new RuntimeException(e);
             }
         });
+    }
+
+    public static String[] classList() {
+        return MOD_SUPPORT_CLASSES.stream().map(Class::getName).toArray(String[]::new);
     }
 
 }
