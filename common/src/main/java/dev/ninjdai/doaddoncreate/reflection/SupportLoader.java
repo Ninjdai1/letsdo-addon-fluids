@@ -7,7 +7,6 @@ import dev.ninjdai.doaddoncreate.reflection.annotations.RunFirst;
 import dev.ninjdai.doaddoncreate.reflection.annotations.SupportsMod;
 import org.reflections.Reflections;
 
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Set;
@@ -34,16 +33,16 @@ public class SupportLoader {
                 continue;
             }
 
-            for (Method method : clazz.getDeclaredMethods()) {
-                if (method.isAnnotationPresent(RunFirst.class)) {
-                    try {
-                        method.setAccessible(true);
-                        method.invoke(null);
-                    } catch (Exception e) {
-                        DoAddonCreate.LOGGER.error("Error invoking method {}: {}", method.getName(), e.getMessage());
-                    }
-                }
-            }
+            Arrays.stream(clazz.getDeclaredMethods())
+                    .filter(method -> method.isAnnotationPresent(RunFirst.class))
+                    .forEach(method -> {
+                        try {
+                            method.setAccessible(true);
+                            method.invoke(null);
+                        } catch (Exception e) {
+                            DoAddonCreate.LOGGER.error("Error invoking method {}: {}", method.getName(), e.getMessage());
+                        }
+                    });
 
             MOD_SUPPORT_CLASSES.add(clazz);
         }
