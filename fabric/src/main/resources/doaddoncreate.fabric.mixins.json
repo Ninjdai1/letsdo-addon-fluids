@@ -1,11 +1,13 @@
 {
   "required": true,
-  "package": "dev.ninjdai.doaddoncreate.mixin",
+  "package": "dev.ninjdai.doaddoncreate.fabric.mixin",
   "plugin": "dev.ninjdai.doaddoncreate.reflection.ModDependantMixinPlugin",
   "compatibilityLevel": "JAVA_17",
   "minVersion": "0.8",
   "client": [],
-  "mixins": [],
+  "mixins": [
+    "GenericItemEmptyingMixin"
+  ],
   "injectors": {
     "defaultRequire": 1
   }

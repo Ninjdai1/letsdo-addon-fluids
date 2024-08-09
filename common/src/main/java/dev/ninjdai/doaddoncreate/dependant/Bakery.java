@@ -20,6 +20,7 @@ public class Bakery implements ModSupport {
     @Override
     public void registerFluidProperties() {
         final int JAM_VISCOSITY = 2000;
+
         STRAWBERRY_JAM_PROPS = FLUID_PROPERTIES.register("strawberry_jam", new DoAddonFluidProperties.BetterBuilder().setJam().simpleTextures("strawberry_jam").get().viscosity(JAM_VISCOSITY));
         GLOWBERRY_JAM_PROPS = FLUID_PROPERTIES.register("glowberry_jam", new DoAddonFluidProperties.BetterBuilder().setJam().simpleTextures("glowberry_jam").get()
                 .canConvertToSource(false)

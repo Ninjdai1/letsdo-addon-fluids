@@ -1,7 +1,6 @@
-package dev.ninjdai.doaddoncreate.dependant;
+package dev.ninjdai.doaddoncreate.dependant.vinery;
 
 import com.teamresourceful.resourcefullib.common.registry.RegistryEntry;
-import dev.ninjdai.doaddoncreate.DoAddonCreate;
 import dev.ninjdai.doaddoncreate.reflection.ModSupport;
 import dev.ninjdai.doaddoncreate.reflection.annotations.SupportsMod;
 import dev.ninjdai.doaddoncreate.registry.DoAddonFluidProperties;

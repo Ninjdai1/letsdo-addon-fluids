@@ -1,12 +1,9 @@
 package dev.ninjdai.doaddoncreate.registry;
 
 import dev.ninjdai.doaddoncreate.DoAddonCreate;
-import dev.ninjdai.doaddoncreate.utils.DoAddonColors;
-import earth.terrarium.botarium.common.registry.fluid.FluidData;
 import earth.terrarium.botarium.common.registry.fluid.FluidProperties;
 import earth.terrarium.botarium.common.registry.fluid.FluidRegistry;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.pathfinder.BlockPathTypes;
 
 public class DoAddonFluidProperties {
 
